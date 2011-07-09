@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Kidspace" default="app:help">
+
+    <!-- ============================================  -->
+    <!-- Target: init - purge old config               -->
+    <!-- ============================================  -->    
+    <target name="app:init">
+        <echo msg="Perparing init folder" />
+        <exec command="rm ./application/config/app.php" />        
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: main                               -->
+    <!-- ============================================  -->
+    <target name="app" depends="app:init" description="Makes symlink to environment application config folder">
+        <echo msg="Creating application config symlink for ${env.ENV} environment" />
+        <exec command="ln -s ../../etc/env/${env.ENV}/config/app.php ./application/config/app.php" />        
+    </target>    
+    
+</project>

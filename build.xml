@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Kidspace" default="help">
+
+    <!-- Database module -->
+    <import file="./modules/database/build.xml" />
+
+    <!-- Facebook module -->
+    <import file="./modules/facebook/build.xml" />
+    
+    <!-- Application config -->
+    <import file="./application/config/build.xml" />
+        
+</project>
