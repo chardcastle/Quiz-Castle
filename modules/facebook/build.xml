@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Quiz Castle" default="facebook:help">
+
+    <!-- ============================================  -->
+    <!-- Target: init - purge old config               -->
+    <!-- ============================================  -->    
+    <target name="facebook:init">
+        <echo msg="Preparing module folder" />
+        <exec command="rm ./modules/facebook/config/facebook.php" />        
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: main                               -->
+    <!-- ============================================  -->
+    <target name="facebook" depends="facebook:init" description="Updates databse config by symlink to environment database config folder">
+        <echo msg="Making symlink for database in ${env.ENV}" />
+        <exec command="ln -s ../../../etc/env/${env.ENV}/config/facebook.php ./modules/facebook/config/facebook.php" />
+    </target>
+
+    <target name="facebook:help">
+        <echo msg="Usage: ENV=[environment] facebook to update facebook settings" />
+    </target>
+    
+</project>

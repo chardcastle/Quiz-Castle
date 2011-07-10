@@ -116,3 +116,7 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
+/**
+ * Load environment type from config file
+ */
+Kohana::$environment = Kohana::config('app')->environment;

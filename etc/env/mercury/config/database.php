@@ -5,10 +5,11 @@
  */
 return array(
 	'host'  => 'localhost',
-	'username' => 'kid_local',
-	'password' => 'wooK7Esa',
-	'dbname' => 'nocutsforkids',
+	'username' => 'quiz_player',
+	'password' => '300vllfsq$',
+	'dbname' => 'quizcastle',
 );
-//CREATE USER 'kid_local'@'localhost' IDENTIFIED BY 'wooK7Esa';
-//SET PASSWORD FOR 'kid_local'@'localhost' = PASSWORD('wooK7Esa');
-//GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON nocutsforkids.* TO 'kid_local'@'localhost';
+//CREATE DATABASE quizcastle;
+//CREATE USER 'quiz_player'@'localhost' IDENTIFIED BY '300vllfsq$';
+////SET PASSWORD FOR 'quiz_player'@'localhost' = PASSWORD('300vllfsq$');
+//GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON quizcastle.* TO 'quiz_player'@'localhost';

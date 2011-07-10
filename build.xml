@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Kidspace" default="help">
+<project name="Quiz Castle" default="help">
+    <!-- ============================================  -->
+    <!-- Target: init - purge old config               -->
+    <!-- ============================================  -->    
+    <target name="help">
+        <echo msg="Build files for Quiz Castle" />     
+    </target>
 
     <!-- Database module -->
     <import file="./modules/database/build.xml" />
