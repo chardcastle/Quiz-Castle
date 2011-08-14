@@ -15,9 +15,10 @@
 		<?php endif ?>
 		<form action="<?php echo Kohana::config('app.app_url') ?>/tab/enter" method="post" id="quiz">
 			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$quiz->question_ids) ?>" />
+			
 			<?php foreach($quiz->questions as $question): ?>
 
-				<?php echo View::factory('shared/question')->bind('question',$question); ?>
+				<?php echo View::factory('shared/question')->bind('question',$question)->bind('existing_answers',$existing_answers); ?>
 
 			<?php endforeach; ?>	
 			<button type="submit" name="complete" id="submit">Enter</button>	

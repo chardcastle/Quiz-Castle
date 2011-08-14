@@ -15,5 +15,18 @@ class Question
 		}
 	}
 
+	public function get_question_by_id($position)
+	{
+		$questions = i18n::get('questions');
+		$total_questions = count($questions);
+		for ($pointer = 0; $pointer <= $total_questions; $pointer++)
+		{
+			if ($pointer == $position)
+			{
+				return new Question($questions[$pointer]);
+			}
+		}
+	}
+
 
 }
