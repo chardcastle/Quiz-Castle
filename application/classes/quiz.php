@@ -48,20 +48,22 @@ class Quiz
 
 	public function get_score(Entry $entry)
 	{
-		$result = array(
-			'questions' => count($entry->answers),
-			'score' => 0,
-		);
+		$result = new Result();
+		$result->number_of_questions = count($entry->answers);
+		
 		foreach ($this->question_ids as $question_id)
 		{
 			$question = new Question();
 			$question =  $question->get_question_by_id($question_id);
 			$user_answer = Arr::get($entry->answers,$question_id,'');
+			$is_correct = false;
 			if ($user_answer == $question->correct_answer)
 			{
-				$result['score'] = (int)$result['score'] + 1;
+				$is_correct = true;
+				$result->score = (int)$result->score + 1;
 			}		
-		}		
+			$result->add_question_result($question_id, $is_correct);
+		}
 		return $result;			
 	}
 
@@ -71,7 +73,8 @@ class Quiz
 		$new_entry = $xml->entries->addChild('entry');		
 		$new_entry->user = serialize(array());
 		$new_entry->question_ids = (string)implode(',',$quiz->question_ids);		
-		$new_entry->score = (string)$entry->score['score'];		
+		$new_entry->score = (string)$entry->results->score;		
+		$new_entry->score_breakdown = (string)$entry->results->get_break_down();
 		$new_entry->entry_token = (string)$quiz->entry_token;
 
 		if (file_put_contents($this->quiz_entries_file, $xml->asXml()) !== false){

@@ -32,7 +32,7 @@ class Controller_Tab extends App_controller {
 		if ($post->check())
 		{						
 			$entry = new Entry($post);			
-			$entry->score = $quiz->get_score($entry);			
+			$entry->results = $quiz->get_score($entry);			
 			try {
 				$view->quiz->add_new_entry($entry, $quiz);
 			} catch(Exception $e)
