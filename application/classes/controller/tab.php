@@ -6,8 +6,7 @@ class Controller_Tab extends App_controller {
 	{
 		$view = View::factory('tab/index');
 		$view->quiz = new Quiz();
-		$view->cache = $this->cache;
-		$view->question_sequence = $view->quiz->sequence;	
+		$view->cache = $this->cache;		
 		$view->errors = null;	
 		$this->response->body($view);
 	}

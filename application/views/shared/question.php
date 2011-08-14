@@ -6,7 +6,7 @@
 			<?php
 				$id = "answers_{$question->id}_{$key}";				
 				$name = "answers[{$question->id}]";
-				$checked = (Arr::get($_POST,$id,null) === $answer) ? 'checked="checked"' : '';			
+				$checked = (Arr::get($_POST,$name,null) === $answer) ? 'checked="checked"' : '';			
 			?>
 			<input type="radio" <?php echo $checked ?> id="<?php echo $id ?>" name="<?php echo $name ?>" />
 			<label for="<?php echo $id ?>"><?php echo $answer; ?></label>

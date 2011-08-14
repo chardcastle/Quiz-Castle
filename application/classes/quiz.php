@@ -3,25 +3,26 @@
 class Quiz 
 {
 	public $questions = array();
-	public $sequence;
+	public $question_ids;
 
 	public function __construct($question_ids = null)
 	{
 		$questions = i18n::get('questions');
-#		shuffle($questions);
-#		$this->sequence = array_keys($questions);
-		// get a range of questions 
+		
+
 		if (is_null($question_ids))
 		{
+			// Make a new random collection of questions and save their positions within language file
 			$question_selection = array_slice($questions, 0, Kohana::config('app.questions_per_contest'));
 	   		$keys = array_keys( $question_selection );
 	   		shuffle( $keys );
 		} else {
+			// Look for a pre determined set of questions				
 			$keys = exlode(',',$question_ids);
 		}
 
    		$this->questions = $this->get_questions_from_ids($keys);
-		$this->sequence = $keys;	
+		$this->question_ids = $keys;	
 	}
 
 	public function get_questions_from_ids($keys)

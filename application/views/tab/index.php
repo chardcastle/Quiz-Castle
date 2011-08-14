@@ -14,7 +14,7 @@
 			<?php endforeach ?>
 		<?php endif ?>
 		<form action="<?php echo Kohana::config('app.app_url') ?>/tab/enter" method="post" id="quiz">
-			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$question_sequence) ?>" />
+			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$quiz->question_ids) ?>" />
 			<?php foreach($quiz->questions as $question): ?>
 
 				<?php echo View::factory('shared/question')->bind('question',$question); ?>
