@@ -3,5 +3,8 @@ $(function(){
 		.find(".answers")
 		.buttonset()
 	.end()
+	.find("#submit")
+		.button()
+	.end()
 		.find('.questions')
 });

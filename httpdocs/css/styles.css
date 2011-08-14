@@ -54,11 +54,12 @@ body {
 	color: #5F5F5F; /* Default grey from global website */
 	font-size: 62.5%;
 }
-h1, h2, h3, h4, h5 { font-size: 3em; color: #2C95DD;/* Light Blue */ font-weight: bold; }
+h1, h2, h3, h4, h5 { font-size: 5em; color: #DB4865;/* Bright pink */ font-weight: bold; }
+h2, h3 { font-size: 2.5em; }
 h4, h5 { font-size: 2em; }
 .clear { clear: both;}
 strong {font-weight: bold;}
-p { font-size: 1.1em; margin: 10px 0; }
-#global_outer { width: 520px; }
+p { font-size: 1.3em; margin: 10px 0; }
+#global_outer { width: 520px; background: #b4e4ed url(../images/tab_bg.jpg) no-repeat top left; }
 
 

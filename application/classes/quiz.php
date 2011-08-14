@@ -25,4 +25,9 @@ class Quiz
 			
 		}	
 	}
+
+	public static function is_all_questions_answered($answers)
+	{
+		return (count($answers) == Kohana::config('app.questions_per_contest'));	
+	}
 }

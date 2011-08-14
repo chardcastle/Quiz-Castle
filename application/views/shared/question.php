@@ -3,8 +3,12 @@
 	<div class="answers">
 		<?php foreach($question->answers as $key => $answer): ?>
 			
-			<?php $id = "radio_{$question->id}_{$key}" ?>
-			<input type="radio" id="<?php echo $id ?>" name="answer[<?php echo $question->id ?>]" />
+			<?php
+				$id = "answers_{$question->id}_{$key}";
+				$name = "answers[{$question->id}]";
+				$checked = (is_null(Arr::get($_POST,$id,null)) ? '' : 'checked="checked"');			
+			?>
+			<input type="radio" <?php echo $checked ?> id="<?php echo $id ?>" name="<?php echo $name ?>" />
 			<label for="<?php echo $id ?>"><?php echo $answer; ?></label>
 			
 		<?php endforeach; ?>
