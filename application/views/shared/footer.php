@@ -1,11 +1,11 @@
-	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/jquery-1.5.1.min.js?cache_breaker=<?php echo $cache ?>"></script>
-  	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/jquery/jquery-ui-1.8.14.custom.min.js?cache_breaker=<?php echo $cache ?>"></script>
+	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/jquery-1.6.2.min.js?cache_breaker=<?php echo $cache ?>"></script>
+  	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/jquery-ui-1.8.15.custom.min.js?cache_breaker=<?php echo $cache ?>"></script>
 	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/app.js?cache_breaker=<?php echo $cache ?>"></script>  
    	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/fonts/cufon-yui.js?cache_breaker=<?php echo $cache ?>"></script>
-	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/fonts/meta.font.js?cache_breaker=<?php echo $cache ?>"></script>    
+	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/fonts/KG_Small_Town_Southern_Girl_400.font.js?cache_breaker=<?php echo $cache ?>"></script>    
     <!-- font replacement -->
     <script type="text/javascript">		
-		Cufon.replace('#header h1, #call_to_action', { fontFamily: 'Meta' });
+		Cufon.replace('h1, h2, h3, h4, h5, h6, strong', { fontFamily: 'KG Small Town Southern Girl' });
 	</script>
     <!-- application vars -->
     <script type="text/javascript">				
@@ -35,3 +35,5 @@
 		}	
     </script>
     <!-- End Facebook SDK -->
+	</body>
+</html>

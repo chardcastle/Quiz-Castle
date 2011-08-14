@@ -21,6 +21,7 @@ return array(
 	),
 	'app_url' => 'http://quizcastle.local.net',
 	'home_address' => 'http://chrishardcastle.co.uk',
+	'questions_per_contest' => 10,
 	'admins' => array(
 		'664739612',
 		'523155273',
