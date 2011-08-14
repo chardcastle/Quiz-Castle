@@ -70,7 +70,7 @@ class Quiz
 		$xml = simplexml_load_file($this->quiz_entries_file);
 		$new_entry = $xml->entries->addChild('entry');		
 		$new_entry->user = serialize(array());
-		$new_entry->question_ids = (string)$quiz->question_ids;		
+		$new_entry->question_ids = (string)implode(',',$quiz->question_ids);		
 		$new_entry->score = (string)$entry->score['score'];		
 		$new_entry->entry_token = (string)$quiz->entry_token;
 

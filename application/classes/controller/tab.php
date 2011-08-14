@@ -20,8 +20,9 @@ class Controller_Tab extends App_controller {
 		$view = View::factory('tab/index');	
 		// Load quiz with questions from collection
 		$question_ids = Arr::get($_POST,'question_sequence',null);	
-		$view->quiz = new Quiz($question_ids);
+		$quiz = new Quiz($question_ids);
 
+		$view->quiz = $quiz;
 		$view->cache = $this->cache;		
 		$view->errors = null;
 		$post = Validation::factory($_POST)		
@@ -29,8 +30,7 @@ class Controller_Tab extends App_controller {
 				->rule('answers', 'Quiz::is_all_questions_answered');
 				
 		if ($post->check())
-		{			
-			$quiz = new Quiz($question_ids);			
+		{						
 			$entry = new Entry($post);			
 			$entry->score = $quiz->get_score($entry);			
 			try {
