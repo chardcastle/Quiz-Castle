@@ -15,6 +15,7 @@
 		<?php endif ?>
 		<form action="<?php echo Kohana::config('app.app_url') ?>/tab/enter" method="post" id="quiz">
 			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$quiz->question_ids) ?>" />
+			<input type="hidden" name="quiz_token" value="<?php echo $quiz->entry_token ?>" />
 			
 			<?php foreach($quiz->questions as $question): ?>
 

@@ -30,11 +30,16 @@ class Controller_Tab extends App_controller {
 				
 		if ($post->check())
 		{			
-			$quiz = new Quiz($question_ids);
-			$quiz->entry_token = $quiz->get_entry_token();
-			$entry = new Entry($post);
-			$quiz->get_score($entry);
-			$view->quiz->add_new_entry($entry);	
+			$quiz = new Quiz($question_ids);			
+			$entry = new Entry($post);			
+			$entry->score = $quiz->get_score($entry);			
+			try {
+				$view->quiz->add_new_entry($entry, $quiz);
+			} catch(Exception $e)
+			{
+				$view->errors = array($e->__toString());
+				$this->response->body($view);
+			}
 			// if ajax
 				// echo done
 			// else
@@ -55,13 +60,11 @@ class Controller_Tab extends App_controller {
 		$this->response->body($view);
 	}
 	
-	public function authorise)
+	public function authorise()
 	{
 		// if code
 			// get token
 			// if token
 		// get user update contest entry with token
 	}
-
-s
-
+}

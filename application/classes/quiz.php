@@ -4,7 +4,7 @@ class Quiz
 {
 	public $questions = array();
 	public $question_ids;
-	public $quiz_entries_file = APPPATH.'/quiz_entries.xml';
+	public $quiz_entries_file = null;
 
 	public function __construct($question_ids = null)
 	{
@@ -21,9 +21,10 @@ class Quiz
 			// Look for a pre determined set of questions				
 			$keys = explode(',',$question_ids);
 		}
-
+		$this->quiz_entries_file = APPPATH.'quiz_entries.xml';
    		$this->questions = $this->get_questions_from_ids($keys);
 		$this->question_ids = $keys;	
+		$this->entry_token = $this->get_entry_token();
 	}
 
 	public function get_questions_from_ids($keys)
@@ -51,11 +52,11 @@ class Quiz
 			'questions' => count($entry->answers),
 			'score' => 0,
 		);
-		foreach ($entry->question_ids as $question_id)
+		foreach ($this->question_ids as $question_id)
 		{
 			$question = new Question();
 			$question =  $question->get_question_by_id($question_id);
-			$user_answer = Arr::get($entry->answers,$question_id,'')
+			$user_answer = Arr::get($entry->answers,$question_id,'');
 			if ($user_answer == $question->correct_answer)
 			{
 				$result['score'] = (int)$result['score'] + 1;
@@ -64,18 +65,23 @@ class Quiz
 		return $result;			
 	}
 
-	public function add_new_entry(Entry $entry)
+	public function add_new_entry(Entry $entry, Quiz $quiz)
 	{
 		$xml = simplexml_load_file($this->quiz_entries_file);
 		$new_entry = $xml->entries->addChild('entry');		
-		$new_entry->responses = (string)$entry->responses;		
-		//$new_entry->is_fan = (string)($entry->user->is_fan > 0 ? 'yes' : 'no');		
-		$new_entry->entry_token = (string)$entry->entry_token;
+		$new_entry->user = serialize(array());
+		$new_entry->question_ids = (string)$quiz->question_ids;		
+		$new_entry->score = (string)$entry->score['score'];		
+		$new_entry->entry_token = (string)$quiz->entry_token;
 
 		if (file_put_contents($this->quiz_entries_file, $xml->asXml()) !== false){
 			return true;
 		} else {
-			return false;
+			throw new Kohana_Exception('Quiz entry :file must be writable',
+				array(
+					':file' => $this->quiz_entries_file
+				)
+			);
 		}
 	}	
 
