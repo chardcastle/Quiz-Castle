@@ -18,7 +18,7 @@ class Quiz
 	   		shuffle( $keys );
 		} else {
 			// Look for a pre determined set of questions				
-			$keys = exlode(',',$question_ids);
+			$keys = explode(',',$question_ids);
 		}
 
    		$this->questions = $this->get_questions_from_ids($keys);

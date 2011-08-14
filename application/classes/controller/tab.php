@@ -14,8 +14,11 @@ class Controller_Tab extends App_controller {
 	public function action_enter($entry_token = null)
 	{
 		// Redirect to app permission request
-		$view = View::factory('tab/index');		
-		$view->quiz = new Quiz();
+		$view = View::factory('tab/index');	
+		// Load quiz with questions from collection
+		$question_ids = Arr::get($_POST,'question_sequence',null);	
+		$view->quiz = new Quiz($question_ids);
+
 		$view->cache = $this->cache;		
 		$view->errors = null;
 		$post = Validation::factory($_POST)		
@@ -24,7 +27,7 @@ class Controller_Tab extends App_controller {
 				
 		if ($post->check())
 		{
-			$question_ids = Arr::get($_POST,'question_sequence',null);
+			
 			$quiz = new Quiz($question_ids);
 			$quiz->entry_token = $quiz->get_entry_token();
 			$view->quiz->add_new_entry($answers);			
