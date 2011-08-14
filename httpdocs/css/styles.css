@@ -59,7 +59,7 @@ h2, h3 { font-size: 2.5em; }
 h4, h5 { font-size: 2em; }
 .clear { clear: both;}
 strong {font-weight: bold;}
-p { font-size: 1.3em; margin: 10px 0; }
+p, li { font-size: 1.3em; margin: 10px 0; }
 #global_outer { width: 520px; background: #b4e4ed url(../images/tab_bg.jpg) no-repeat top left; }
 
 

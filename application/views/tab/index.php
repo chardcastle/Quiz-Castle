@@ -6,17 +6,15 @@
 	<div id="global_outer">
 		<h1><?php echo i18n::get('tab_intro'); ?></h1>
 		<h2>This is for the lols</h2>
-		<?php if ( ! is_null($errors)): ?>
-			<?php print_r($errors) ?>
-		<?php endif; ?>
 		<?php if ($errors): ?>
-		<p class="message">Some errors were encountered, please check the details you entered.</p>
-		<ul class="errors">
-		<?php foreach ($errors as $message): ?>
-		    <li><?php echo $message ?></li>
-		<?php endforeach ?>
+			<p class="message">Some errors were encountered, please check the details you entered.</p>
+			<ul class="errors">
+			<?php foreach ($errors as $message): ?>
+			    <li><?php echo $message ?></li>
+			<?php endforeach ?>
 		<?php endif ?>
 		<form action="<?php echo Kohana::config('app.app_url') ?>/tab/enter" method="post" id="quiz">
+			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$question_sequence) ?>" />
 			<?php foreach($quiz->questions as $question): ?>
 
 				<?php echo View::factory('shared/question')->bind('question',$question); ?>

@@ -6,7 +6,8 @@ class Controller_Tab extends App_controller {
 	{
 		$view = View::factory('tab/index');
 		$view->quiz = new Quiz();
-		$view->cache = $this->cache;	
+		$view->cache = $this->cache;
+		$view->question_sequence = $view->quiz->sequence;	
 		$view->errors = null;	
 		$this->response->body($view);
 	}
@@ -14,7 +15,7 @@ class Controller_Tab extends App_controller {
 	public function action_enter($entry_token = null)
 	{
 		// Redirect to app permission request
-		$view = View::factory('tab/index');
+		$view = View::factory('tab/index');		
 		$view->quiz = new Quiz();
 		$view->cache = $this->cache;		
 		$view->errors = null;
@@ -24,7 +25,8 @@ class Controller_Tab extends App_controller {
 				
 		if ($post->check())
 		{
-			$quiz = new Quiz();
+			$question_ids = Arr::get($_POST,'question_sequence',null);
+			$quiz = new Quiz($question_ids);
 			$quiz->entry_token = $quiz->get_entry_token();
 			$view->quiz->add_new_entry($answers);			
 		}
