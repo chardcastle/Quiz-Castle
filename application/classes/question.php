@@ -27,6 +27,14 @@ class Question
 			}
 		}
 	}
+	public function get_response($is_correct = false)
+	{
+		$type = ($is_correct ? 'correct' : 'incorrect');
+		$responses = i18n::get('responses');
+		$responses = $responses[$type];
+		shuffle($responses);
+		return Arr::get($responses,0,"Could not compute a response");
+	}
 
 
 }

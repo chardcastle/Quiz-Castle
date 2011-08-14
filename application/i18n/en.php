@@ -12,7 +12,7 @@ return array(
 			"Good anwswer, that's correct!",
 			"You rock, that's right",
 		),
-		"in_correct" => array(
+		"incorrect" => array(
 			"Oh dear, that's not right",
 			"Incorrect :( good try tho",
 			"That's not right - tough question",

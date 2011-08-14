@@ -53,12 +53,26 @@ class Controller_Tab extends App_controller {
 
 	}
 	
+	/**
+	* Ajax only!
+	*/
 	public function action_answer()
 	{
-		$view = View::factory('tab/index');
-		$this->request->param();			
-		$this->response->body($view);
-	}
+		$question = new Question();
+		$question_id = Arr::get($_POST,'question_id',null);
+		$user_answer = Arr::get($_POST,'answer',null);
+		$is_correct = false;
+		if ( ! is_null($question_id))
+		{
+			$question = $question->get_question_by_id($question_id);
+			if ($question->correct_answer == $user_answer)
+			{
+				$is_correct = true;
+			}			
+		}
+		echo json_encode(array('message'=>$question->get_response($is_correct)));
+		exit;
+	}	
 	
 	public function authorise()
 	{
