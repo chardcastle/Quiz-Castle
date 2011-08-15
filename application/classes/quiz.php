@@ -5,16 +5,17 @@ class Quiz
 	public $questions = array();
 	public $question_ids;
 	public $quiz_entries_file = null;
+	public $quiz_questions_count = -1;
 
 	public function __construct($question_ids = null)
 	{
 		$questions = i18n::get('questions');
-		
+		$this->quiz_questions_count = Kohana::config('app.questions_per_contest');
 
 		if (is_null($question_ids))
 		{
 			// Make a new random collection of questions and save their positions within language file
-			$question_selection = array_slice($questions, 0, Kohana::config('app.questions_per_contest'));
+			$question_selection = array_slice($questions, 0, $this->quiz_questions_count);
 	   		$keys = array_keys( $question_selection );
 	   		shuffle( $keys );
 		} else {

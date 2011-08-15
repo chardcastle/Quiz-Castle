@@ -1,4 +1,5 @@
 <div class="question">
+	<h4>Question <?php echo $index ?>) of <?php echo $questions ?></h4>
 	<p><?php echo $question->body ?></p>
 	<div class="answers">
 		<?php foreach($question->answers as $key => $answer): ?>

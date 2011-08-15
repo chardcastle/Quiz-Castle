@@ -17,9 +17,15 @@
 			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$quiz->question_ids) ?>" />
 			<input type="hidden" name="quiz_token" value="<?php echo $quiz->entry_token ?>" />
 			
-			<?php foreach($quiz->questions as $question): ?>
+			<?php foreach($quiz->questions as $index => $question): ?>
 
-				<?php echo View::factory('shared/question')->bind('question',$question)->bind('existing_answers',$existing_answers); ?>
+				<?php 
+				$index = (int)$index + 1;	
+				echo View::factory('shared/question')
+						->bind('question',$question)
+						->bind('existing_answers',$existing_answers)
+						->bind('index', $index)
+						->bind('questions',$quiz->quiz_questions_count); ?>
 
 			<?php endforeach; ?>	
 			<button type="submit" name="complete" id="submit">Enter</button>	
