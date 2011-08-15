@@ -3,6 +3,7 @@
 return array(
 	"tab_title" => "Quiz",
 	"tab_intro" => "Welcome to my quiz!",
+	"thanks_for_playing" => 'Thanks for playing my game.',
 	"responses" => array(
 		"correct" => array(
 			"Well done smarty pants",

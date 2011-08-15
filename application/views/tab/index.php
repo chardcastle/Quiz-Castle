@@ -16,18 +16,19 @@
 		<form action="<?php echo Kohana::config('app.app_url') ?>/tab/enter" method="post" id="quiz">
 			<input type="hidden" name="question_sequence" value="<?php echo implode(',',$quiz->question_ids) ?>" />
 			<input type="hidden" name="quiz_token" value="<?php echo $quiz->entry_token ?>" />
-			
-			<?php foreach($quiz->questions as $index => $question): ?>
+			<div id="questions">
+				<?php foreach($quiz->questions as $index => $question): ?>
 
-				<?php 
-				$index = (int)$index + 1;	
-				echo View::factory('shared/question')
-						->bind('question',$question)
-						->bind('existing_answers',$existing_answers)
-						->bind('index', $index)
-						->bind('questions',$quiz->quiz_questions_count); ?>
+					<?php 
+					$index = (int)$index + 1;	
+					echo View::factory('shared/question')
+							->bind('question',$question)
+							->bind('existing_answers',$existing_answers)
+							->bind('index', $index)
+							->bind('questions',$quiz->quiz_questions_count); ?>
 
-			<?php endforeach; ?>	
+				<?php endforeach; ?>
+			</div>	
 			<button type="submit" name="complete" id="submit">Enter</button>	
 		</form>
 	</div>

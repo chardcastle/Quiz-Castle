@@ -73,7 +73,13 @@ class Controller_Tab extends App_controller {
 		echo json_encode(array('message'=>$question->get_response($is_correct)));
 		exit;
 	}	
-	
+
+	public function action_thank()
+	{
+		$view = View::factory('tab/thanks');
+		$this->response->body($view);	
+	}	
+
 	public function authorise()
 	{
 		// if code
