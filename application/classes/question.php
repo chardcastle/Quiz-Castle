@@ -27,6 +27,11 @@ class Question
 			}
 		}
 	}
+
+	/**
+	* @param bool Result from correction answer
+	* @return string A random response based on a positive or negative value
+	*/
 	public function get_response($is_correct = false)
 	{
 		$type = ($is_correct ? 'correct' : 'incorrect');

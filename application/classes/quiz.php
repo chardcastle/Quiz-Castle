@@ -68,11 +68,11 @@ class Quiz
 		return $result;			
 	}
 
-	public function add_new_entry(Entry $entry, Quiz $quiz)
-	{
+	public function add_new_entry(Entry $entry, Quiz $quiz, Model_User $user)
+	{	/*
 		$xml = simplexml_load_file($this->quiz_entries_file);
 		$new_entry = $xml->entries->addChild('entry');		
-		$new_entry->user = serialize(array());
+		$new_entry->user_id = serialize(array());
 		$new_entry->question_ids = (string)implode(',',$quiz->question_ids);		
 		$new_entry->score = (string)$entry->results->score;		
 		$new_entry->score_breakdown = (string)$entry->results->get_break_down();
@@ -86,6 +86,14 @@ class Quiz
 					':file' => $this->quiz_entries_file
 				)
 			);
+		}*/
+		$score = ORM::factory('score')
+				->values($entry)
+				->set('user_id',$user->get_id());
+		try {
+			$score->save();
+		} catch(Exception $e){
+			die($e->__toString());
 		}
 	}	
 
