@@ -64,5 +64,5 @@ h4, h5 { font-size: 2em; }
 strong {font-weight: bold;}
 p, li { font-size: 1.3em; margin: 10px 0; }
 #global_outer { width: 500px; background: #b4e4ed url(../images/tab_bg.jpg) no-repeat top left; padding: 20px 10px 20px; }
-
+#app_error h3 { font-size: 1..2em; color: #ccc; }
 

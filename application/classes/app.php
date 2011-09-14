@@ -121,8 +121,7 @@ class App
 	*/
 	public function get_cache_string()
 	{		
-		$environment = $this->get_environment_type();
-		if ($environment != Kohana::PRODUCTION)
+		if (Kohana::$environment != Kohana::PRODUCTION)
 		{
 			// return something different to force a fresh copy upon users
 			return uniqid();	

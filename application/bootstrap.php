@@ -121,3 +121,12 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
  * Load environment type from config file
  */
 Kohana::$environment = Kohana::config('app')->environment;
+
+try
+{
+	set_exception_handler(array('App_Exception', 'handle'));
+}
+catch(Exception $e)
+{
+	die('Cannot use application exception handler');
+}
