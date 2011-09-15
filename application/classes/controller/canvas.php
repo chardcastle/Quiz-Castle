@@ -26,15 +26,7 @@ class Controller_Canvas extends Controller_Global
 		$this->template->body = 'done';
 	}
 
-	public function action_test(){
-$lang = i18n::lang();
-		$parts = explode('-', $lang);
-		foreach ($parts as $part)
-		{
-			var_dump(Kohana::find_file('i18n', $part, NULL, TRUE));
-		}
-		die();
-	}
+
 	public function action_buildtwo()
 	{
 

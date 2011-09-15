@@ -58,8 +58,6 @@ class App_Build
 		return true;
 	}
 	
-	public static function test(){}
-
 	/**
 	* Make the list of movie questions	
 	*/
@@ -85,18 +83,15 @@ class App_Build
 			{
 				$meta = pathinfo($answer);
 				$question_file_name = md5(strtolower($answer)) . '.' . Arr::get($meta, 'extension','');
+				$question_answer = ucfirst(strtolower(str_replace('_', ' ', Arr::get($meta,'filename'))));
 				$question_file = $target . $question_file_name;
 				$question_url =  Kohana::config('app.app_url') .'/images/movie_questions/' . $question_file_name;
 				// Make question
 				$question = array(
-					"body" => "What famous document begins: 'When in the course of human events...'?",
-					"correct_answer" => "The Declaration of Independence.",
-					"answers" => array(
-						"The bible",
-						"Itunes terms of service",
-						"The Magna carter",
-						"The Declaration of Independence.",
-					),
+					"body" => "Which film does the following image belong to?",
+					"image_url" => $question_url,
+					"correct_answer" => $question_answer,
+					"answers" => array(),
 				);
 			
 				// Add question
@@ -112,11 +107,15 @@ class App_Build
 		{
 			throw new Kohana_Exception('Could not find source images for movies.');
 		}
-		
+
 		// Wriet questions to file
-		$app_i18n['questions'] = $collection;
+		$app_i18n = array_merge($app_i18n, $collection);
+		$new_quiz_copy = Kohana::FILE_SECURITY . "\r\n\r\n";
+		$new_quiz_copy .= var_export($app_i18n,true);
 		// Dind path to i18n
-		if ( ! file_put_contents($lang_file, var_export($app_i18n, false)))
+#		echo kohana_Debug::vars($lang_file);
+#		echo kohana_Debug::vars($new_quiz_copy);
+		if ( ! file_put_contents($lang_file, $new_quiz_copy))
 		{						
 			throw new Kohana_Exception('Could not write questions file xml.');
 		}
