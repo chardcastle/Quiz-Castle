@@ -111,7 +111,7 @@ class App_Build
 		// Wriet questions to file
 		$app_i18n = array_merge($app_i18n, $collection);
 		$new_quiz_copy = Kohana::FILE_SECURITY . "\r\n\r\n";
-		$new_quiz_copy .= var_export($app_i18n,true);
+		$new_quiz_copy .= "return " . var_export($app_i18n,true) . ";";
 		// Dind path to i18n
 #		echo kohana_Debug::vars($lang_file);
 #		echo kohana_Debug::vars($new_quiz_copy);
