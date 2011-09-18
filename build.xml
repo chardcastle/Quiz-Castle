@@ -16,5 +16,11 @@
     
     <!-- Application config -->
     <import file="./application/config/build.xml" />
+
+    <target name="correct_perms" description="Updates file permissions on required files">
+        <echo msg="Received: ${env.ENV} as the desired environment" />
+        <exec command="sudo chown chardcastle.www-data application/i18n/en.php" />
+        <exec command="sudo chmod g+w application/i18n/en.php" />
+    </target>
         
 </project>

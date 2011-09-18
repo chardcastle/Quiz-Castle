@@ -72,14 +72,15 @@ class App_Build
 			throw new Kohana_Exception('Application is not in desired locale or is unable to write to language file.');
 		}
 		// Get existing questions
-		$collection = i18n::get('questions');
+		$new = array(
+			'questions' => i18n::get('questions'),
+		);
 		$target = App_Build::get_movie_directory();
-		$source_dir = App_Build::get_source_directory();
-		$dir = $source_dir . "movie_questions/";
+		$source_dir = App_Build::get_source_directory() . "movie_questions/";
 
-		if (is_dir($dir))
+		if (is_dir($source_dir))
 		{
-			foreach (glob($dir.'*') as $answer)
+			foreach (glob($source_dir.'*') as $answer)
 			{
 				$meta = pathinfo($answer);
 				$question_file_name = md5(strtolower($answer)) . '.' . Arr::get($meta, 'extension','');
@@ -92,10 +93,9 @@ class App_Build
 					"image_url" => $question_url,
 					"correct_answer" => $question_answer,
 					"answers" => array(),
-				);
-			
+				);			
 				// Add question
-				$collection[] = $question; 
+				$new['questions'][] = $question; 
 
 				if ( ! copy($answer, $question_file))
 				{
@@ -109,7 +109,7 @@ class App_Build
 		}
 
 		// Wriet questions to file
-		$app_i18n = array_merge($app_i18n, $collection);
+		$app_i18n = array_merge($app_i18n, $new);
 		$new_quiz_copy = Kohana::FILE_SECURITY . "\r\n\r\n";
 		$new_quiz_copy .= "return " . var_export($app_i18n,true) . ";";
 		// Dind path to i18n
@@ -121,49 +121,23 @@ class App_Build
 		}
 		return true;
 	}
-	/**
-	* Make the list of movie questions	
-	
-	public static function build_movie_questions()
+
+	public static function tear_down()
 	{
-
-		$collection = new SimpleXMLElement('<movie_questions></movie_questions>');
-		$target = App_Build::get_movie_directory();
-		$source_dir = App_Build::get_source_directory();
-		$dir = $source_dir . "movie_questions/";
-
+		$dir = App_Build::get_movie_directory();
 		if (is_dir($dir))
 		{
-			foreach (glob($dir.'*') as $answer)
-			{
-				$meta = pathinfo($answer);
-				$question_file_name = md5(strtolower($answer)) . '.' . Arr::get($meta, 'extension','');
-				$question_file = $target . $question_file_name;
-				$question_url =  Kohana::config('app.app_url') .'/images/movie_questions/' . $question_file_name;
-				// Make question
-				$question = $collection->addChild('question');
-				$question->addChild('answer', (string)$answer);
-				$question->addChild('image_source', (string)$question_file);
-				// Add question
-				$collection->addChild('question', $question); 
-
-				if ( ! copy($answer, $question_file))
-				{
-					throw new Kohana_Exception('Could not copy file.');
-				}
+			foreach	(glob($dir.'*.xml') as $file)
+			{				
+				unset($file);
 			}
+			foreach	(glob($dir.'*.jpg') as $file)
+			{
+				unset($file);
+			}
+		} else {
+
+			throw new Kohana_Exception("Could not list directory. {$dir}");
 		}
-		else
-		{
-			throw new Kohana_Exception('Could not find source images for movies.');
-		}
-		
-		// Wriet questions to file
-		$xml = (string)$collection->asXml();
-		if ( ! file_put_contents($target  . 'questions.xml', $xml))
-		{						
-			throw new Kohana_Exception('Could not write questions file xml.');
-		}
-		return true;
-	}*/
+	}
 }

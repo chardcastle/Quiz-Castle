@@ -69,24 +69,7 @@ class Quiz
 	}
 
 	public function add_new_entry(Entry $entry, Quiz $quiz, Model_User $user)
-	{	/*
-		$xml = simplexml_load_file($this->quiz_entries_file);
-		$new_entry = $xml->entries->addChild('entry');		
-		$new_entry->user_id = serialize(array());
-		$new_entry->question_ids = (string)implode(',',$quiz->question_ids);		
-		$new_entry->score = (string)$entry->results->score;		
-		$new_entry->score_breakdown = (string)$entry->results->get_break_down();
-		$new_entry->entry_token = (string)$quiz->entry_token;
-
-		if (file_put_contents($this->quiz_entries_file, $xml->asXml()) !== false){
-			return true;
-		} else {
-			throw new Kohana_Exception('Quiz entry :file must be writable',
-				array(
-					':file' => $this->quiz_entries_file
-				)
-			);
-		}*/
+	{
 		$score = ORM::factory('score')
 				->values($entry)
 				->set('user_id',$user->get_id());

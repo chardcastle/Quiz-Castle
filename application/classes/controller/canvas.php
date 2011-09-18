@@ -27,12 +27,12 @@ class Controller_Canvas extends Controller_Global
 	}
 
 
-	public function action_buildtwo()
+	public function action_teardown()
 	{
 
 		try 
 		{
-			App_Build::build_movie_questions();
+			App_Build::tear_down();
 		}
 		catch (Exception $e)
 		{
