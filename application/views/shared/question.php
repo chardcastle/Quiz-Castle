@@ -1,3 +1,4 @@
+<?php $name = "answers[{$question->id}]"; ?>
 <div class="question" id="question_<?php echo $index ?>">
 	<h4>Question <?php echo $index ?>) of <?php echo $questions ?></h4>
 	<p><?php echo $question->body ?></p>
@@ -9,12 +10,7 @@
 
 			<div class="ui-widget">
 				<label for="movie_names">Type your answer here: </label>
-				<input class="movie_names" name="movie_title_choice"/>
-			</div>
-
-			<div class="ui-widget" style="margin-top:2em; font-family:Arial">
-				Options:
-				<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+				<input type="text" class="movie_names" name="<?php echo $name ?>" data-value="<?php echo $index ?>" />
 			</div>
 
 		</form>	
@@ -24,8 +20,7 @@
 		<div class="answers">
 			<?php foreach($question->answers as $key => $answer): ?>
 				<?php
-					$id = "answers_{$question->id}_{$key}";				
-					$name = "answers[{$question->id}]";
+					$id = "answers_{$question->id}_{$key}";					
 					$checked = (Arr::get($existing_answers,$question->id,'') == $answer) ? 'checked="checked"' : '';	
 				?>
 				<input type="radio" <?php echo $checked ?> id="<?php echo $id ?>" data-value="<?php echo $index ?>" name="<?php echo $name ?>" value="<?php echo $answer ?>"/>
