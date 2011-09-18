@@ -31,6 +31,7 @@ return array (
     array (
       'body' => 'What famous document begins: \'When in the course of human events...\'?',
       'correct_answer' => 'The Declaration of Independence.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The bible',
@@ -43,6 +44,7 @@ return array (
     array (
       'body' => 'What game was created by French mathematician Blaise Pascal, which he discovered when doing experiments into perpetual motion?',
       'correct_answer' => 'The Game of Roulette.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Poker',
@@ -55,6 +57,7 @@ return array (
     array (
       'body' => 'Who said: \'I\'m the president of the United States and I\'m not going to eat any more broccoli\'?',
       'correct_answer' => 'George Bush.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Gerald Ford',
@@ -67,6 +70,7 @@ return array (
     array (
       'body' => 'What so-called \'war\' spawned the dueling slogans \'Better Dead Than RED\' and \'Better Red Than Dead\' in the 1950\'s?',
       'correct_answer' => 'The Cold War.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The Korean war',
@@ -79,6 +83,7 @@ return array (
     array (
       'body' => 'What ethnic group was largely responsible for building \'most of the early railways in the U.S. West?',
       'correct_answer' => 'The Chinese.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The British',
@@ -91,6 +96,7 @@ return array (
     array (
       'body' => 'What was a gladiator armed with, in addition to a dagger and spear?',
       'correct_answer' => 'A net.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'A pen',
@@ -103,6 +109,7 @@ return array (
     array (
       'body' => 'What election year saw bumper stickers reading \'Wallace, Wallace, Uber Alles\'?',
       'correct_answer' => '1968.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => '1984',
@@ -115,6 +122,7 @@ return array (
     array (
       'body' => 'What 20th-century conflict was dubbed the \'forgotten war\' despite 54,246 U.S. deaths?',
       'correct_answer' => 'The Korean War.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Battle of Saalfeld',
@@ -127,6 +135,7 @@ return array (
     array (
       'body' => 'What single name is more commonly applied to Holy Roman Emperor Charles the Great?',
       'correct_answer' => 'Charlemagne.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Charlie',
@@ -139,6 +148,7 @@ return array (
     array (
       'body' => 'Who was the last president of the Soviet Union?',
       'correct_answer' => 'Mikail Gorbachev.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Tony Blair',
@@ -151,6 +161,7 @@ return array (
     array (
       'body' => 'What had Pliny the Younger seen erupt when he wrote: \'We were terrified to see everything changed, buried in ashes like snowdrifts\'?',
       'correct_answer' => 'Mount Vesuvius.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Mount pleasent',
@@ -163,6 +174,7 @@ return array (
     array (
       'body' => 'Who saw the turtleneck he wore at cease-fire talks in Bosnia fetch $5,000 at auction?',
       'correct_answer' => 'Jimmy Carter.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Jimbo Jackson',
@@ -175,6 +187,7 @@ return array (
     array (
       'body' => 'What Alabama city saw state troopers attack Civil Rights marchers on Edmund Pettis Bridge?',
       'correct_answer' => 'Selma.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Southside',
@@ -187,6 +200,7 @@ return array (
     array (
       'body' => 'What Texan ended up with one delegate after spending $12 million of his own money running for president in 1980?',
       'correct_answer' => 'John Connally.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Buck Rodgers',
@@ -199,6 +213,7 @@ return array (
     array (
       'body' => 'What congressional award was Dr. Mary Edwards Walker the first woman to receive?',
       'correct_answer' => 'Medal of Honor.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Gold start',
@@ -211,6 +226,7 @@ return array (
     array (
       'body' => 'What modern vehicle was invented to circumvent trench warfare?',
       'correct_answer' => 'The Tank',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The stink bomb',
@@ -223,6 +239,7 @@ return array (
     array (
       'body' => 'What California city did the last Pony Express ride end in?',
       'correct_answer' => 'Sacramento.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Las Vegas',
@@ -235,6 +252,7 @@ return array (
     array (
       'body' => 'Who was the first U.S. president to adopt the informal version of his first name?',
       'correct_answer' => 'Jimmy Carter.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Billy Bragg',
@@ -247,6 +265,7 @@ return array (
     array (
       'body' => 'What civil rights leader did Dorothy Parker leave the bulk of her estate to?',
       'correct_answer' => 'Martin Luther King Jr.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Lex Luther',
@@ -259,6 +278,7 @@ return array (
     array (
       'body' => 'What did Republicans call the platform they hyped in the 1994 Congressional elections?',
       'correct_answer' => 'The Contract With America.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The cloud',
@@ -271,6 +291,7 @@ return array (
     array (
       'body' => 'What brave-hearted Scottish patriot led soldiers to a defeat of the English at the Battle of Cambuskenneth in 1297?',
       'correct_answer' => 'William Wallace.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Bruce the brave',
@@ -283,6 +304,7 @@ return array (
     array (
       'body' => 'What nation issued the five-dollar bill found in Abraham Lincoln\'s pocket when he was shot?',
       'correct_answer' => 'The Confederate States of America.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'The United States of America',
@@ -295,6 +317,7 @@ return array (
     array (
       'body' => 'What political system was gradually dismantled in South Africa, starting in 1989?',
       'correct_answer' => 'Apartheid.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'Communisim',
@@ -307,6 +330,7 @@ return array (
     array (
       'body' => 'What was 11th-century Spanish military leader Rodrigo Diaz de Vivar better know as?',
       'correct_answer' => 'El Cid.',
+      'type' => 'multi_choice',
       'answers' => 
       array (
         0 => 'El Rodo',
@@ -320,6 +344,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/e115e57ee41ad8119e3b2cbc6cf98972.jpg',
       'correct_answer' => 'Airplane',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -329,6 +354,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/34e0d6d7c53f15bd7e52202df58d1686.jpg',
       'correct_answer' => 'Battle royale',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -338,6 +364,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/687f5f918c587f9c746d19ae06e3e858.jpg',
       'correct_answer' => 'Biglebowski',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -347,6 +374,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/f509bc58708f26bdde813f04621effeb.jpg',
       'correct_answer' => 'Blair witch project',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -356,6 +384,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/d06dde84f8d78b5c9d88227a18427f53.jpg',
       'correct_answer' => 'Blues brothers',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -365,6 +394,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/06c9deee140d9dd1695ea29f58227e90.jpg',
       'correct_answer' => 'Cars',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -374,6 +404,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/f5099f86bbe631334012aaa045ac974a.jpg',
       'correct_answer' => 'Ghost world',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -383,6 +414,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/2ae1d44fee47901f76e4c25b3002de59.jpg',
       'correct_answer' => 'Hot fuzz',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -392,6 +424,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/ba4a67c6968e79e309a8f8322e197409.jpg',
       'correct_answer' => 'Indiana jones',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -401,6 +434,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/87e3d3770f0e3b90fd6fada58da2d17e.jpg',
       'correct_answer' => 'Jaws',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -410,6 +444,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/f92f1937cf6674161a8f82c6d4ff0759.jpg',
       'correct_answer' => 'Juno',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -419,6 +454,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/96b44c2850e2f51c62e31f785bc9161d.jpg',
       'correct_answer' => 'Nosferatu',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -428,6 +464,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/e64487a893b577b445d4d6dcde3f3214.jpg',
       'correct_answer' => 'Oliver twist',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -437,6 +474,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/b689100f6096455da5f0608a4e92721e.jpg',
       'correct_answer' => 'Pans labrynth',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -446,6 +484,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/452aa92c816fcfed367dffe75c27498c.jpg',
       'correct_answer' => 'Poltergiest',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -455,6 +494,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/80da0b5a18dbe80ee89e7b99136820f1.jpg',
       'correct_answer' => 'Predator',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -464,6 +504,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/bbc660e319082ce388e92f91c04770cc.jpg',
       'correct_answer' => 'Pulp fiction',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -473,6 +514,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/21b45aa1da63f554ebf93979169404fa.jpg',
       'correct_answer' => 'Spiderman',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -482,6 +524,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/920980ce74e20b6129261aeca74c8981.jpg',
       'correct_answer' => 'The sound of music',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -491,6 +534,7 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/eb12e2394b9c11b40c9ebd0fc32d38cf.jpg',
       'correct_answer' => 'West side story',
+      'type' => 'movie',
       'answers' => 
       array (
       ),
@@ -500,6 +544,217 @@ return array (
       'body' => 'Which film does the following image belong to?',
       'image_url' => 'http://quizcastle.local.net/images/movie_questions/293cae903f5837d1500f72a8ea6dfa15.jpg',
       'correct_answer' => 'Withnail and i',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    45 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/e115e57ee41ad8119e3b2cbc6cf98972.jpg',
+      'correct_answer' => 'Airplane',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    46 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/34e0d6d7c53f15bd7e52202df58d1686.jpg',
+      'correct_answer' => 'Battle royale',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    47 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/687f5f918c587f9c746d19ae06e3e858.jpg',
+      'correct_answer' => 'Biglebowski',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    48 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/f509bc58708f26bdde813f04621effeb.jpg',
+      'correct_answer' => 'Blair witch project',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    49 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/d06dde84f8d78b5c9d88227a18427f53.jpg',
+      'correct_answer' => 'Blues brothers',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    50 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/06c9deee140d9dd1695ea29f58227e90.jpg',
+      'correct_answer' => 'Cars',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    51 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/f5099f86bbe631334012aaa045ac974a.jpg',
+      'correct_answer' => 'Ghost world',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    52 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/2ae1d44fee47901f76e4c25b3002de59.jpg',
+      'correct_answer' => 'Hot fuzz',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    53 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/ba4a67c6968e79e309a8f8322e197409.jpg',
+      'correct_answer' => 'Indiana jones',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    54 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/87e3d3770f0e3b90fd6fada58da2d17e.jpg',
+      'correct_answer' => 'Jaws',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    55 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/f92f1937cf6674161a8f82c6d4ff0759.jpg',
+      'correct_answer' => 'Juno',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    56 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/96b44c2850e2f51c62e31f785bc9161d.jpg',
+      'correct_answer' => 'Nosferatu',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    57 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/e64487a893b577b445d4d6dcde3f3214.jpg',
+      'correct_answer' => 'Oliver twist',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    58 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/b689100f6096455da5f0608a4e92721e.jpg',
+      'correct_answer' => 'Pans labrynth',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    59 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/452aa92c816fcfed367dffe75c27498c.jpg',
+      'correct_answer' => 'Poltergiest',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    60 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/80da0b5a18dbe80ee89e7b99136820f1.jpg',
+      'correct_answer' => 'Predator',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    61 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/bbc660e319082ce388e92f91c04770cc.jpg',
+      'correct_answer' => 'Pulp fiction',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    62 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/21b45aa1da63f554ebf93979169404fa.jpg',
+      'correct_answer' => 'Spiderman',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    63 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/920980ce74e20b6129261aeca74c8981.jpg',
+      'correct_answer' => 'The sound of music',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    64 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/eb12e2394b9c11b40c9ebd0fc32d38cf.jpg',
+      'correct_answer' => 'West side story',
+      'type' => 'movie',
+      'answers' => 
+      array (
+      ),
+    ),
+    65 => 
+    array (
+      'body' => 'Which film does the following image belong to?',
+      'image_url' => 'http://quizcastle.local.net/images/movie_questions/293cae903f5837d1500f72a8ea6dfa15.jpg',
+      'correct_answer' => 'Withnail and i',
+      'type' => 'movie',
       'answers' => 
       array (
       ),

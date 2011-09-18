@@ -92,6 +92,7 @@ class App_Build
 					"body" => "Which film does the following image belong to?",
 					"image_url" => $question_url,
 					"correct_answer" => $question_answer,
+					"type" => 'movie',
 					"answers" => array(),
 				);			
 				// Add question

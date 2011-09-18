@@ -4,7 +4,8 @@ class Quiz
 {
 	public $questions = array();
 	public $question_ids;
-	public $quiz_entries_file = null;
+
+
 	public $quiz_questions_count = -1;
 
 	public function __construct($question_ids = null)
@@ -15,14 +16,20 @@ class Quiz
 		if (is_null($question_ids))
 		{
 			// Make a new random collection of questions and save their positions within language file
-			$question_selection = array_slice($questions, 0, $this->quiz_questions_count);
-	   		$keys = array_keys( $question_selection );
-	   		shuffle( $keys );
+			if (count($questions) > $this->quiz_questions_count)
+			{
+				$question_selection = array_rand($questions, $this->quiz_questions_count);
+		   		$keys = array_values($question_selection);
+		   		shuffle($keys);
+
+			} else {
+				throw new App_Exception("Sorry, there's not enough questions in the quiz to play at the moment.");
+			}
 		} else {
 			// Look for a pre determined set of questions				
-			$keys = explode(',',$question_ids);
+			$keys = explode(',', $question_ids);
 		}
-		$this->quiz_entries_file = APPPATH.'quiz_entries.xml';
+
    		$this->questions = $this->get_questions_from_ids($keys);
 		$this->question_ids = $keys;	
 		$this->entry_token = $this->get_entry_token();

@@ -1,5 +1,46 @@
-
 $(function(){
+	/*
+	* Movie title answer
+	*/
+	var auto_complete = {
+		log_response: function( message ) {
+				$( "<div/>" ).text( message ).prependTo( "#log" );
+				$( "#log" ).scrollTop( 0 );
+		},
+		data: null
+	}
+
+	if ($('.movie_answer').length)
+	{
+		$.ajax({
+			url: $('.movie_answer:first').attr('action'),
+			dataType: "xml",
+			success: function( xmlResponse ) {
+				auto_complete.data = $( "title", xmlResponse ).map(function() {
+					return {
+						value: $(this).text(),
+						id: $(this).text()
+					};
+				}).get();
+				$( ".movie_names" )
+					.each(function(i, item){
+						$(item)
+						.autocomplete({
+							source: auto_complete.data,
+							minLength: 0,
+							select: function( event, ui ) {
+								auto_complete.log_response( ui.item ?
+									"Selected: " + ui.item.value + ", geonameId: " + ui.item.id :
+									"Nothing selected, input was " + this.value );
+							}
+						})
+					})
+			}
+		});
+	}
+	/*
+	* End Movie title answer
+	*/			
 	$('body')
 		.find(".answers")
 		.buttonset()
