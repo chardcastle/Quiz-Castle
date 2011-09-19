@@ -21,6 +21,9 @@
         <echo msg="Received: ${env.ENV} as the desired environment" />
         <exec command="sudo chown chardcastle.www-data application/i18n/en.php" />
         <exec command="sudo chmod g+w application/i18n/en.php" />
+
+        <exec command="sudo chown -R www-data.www-data httpdocs/images/movie_questions" />
+        <exec command="sudo chmod -R 775 httpdocs/images/movie_questions" />
     </target>
         
 </project>

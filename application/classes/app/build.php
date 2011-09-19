@@ -84,6 +84,7 @@ class App_Build
 			{
 				$meta = pathinfo($answer);
 				$question_file_name = md5(strtolower($answer)) . '.' . Arr::get($meta, 'extension','');
+				$question_thumb_name = md5(strtolower($answer)) . '_tab.' . Arr::get($meta, 'extension','');
 				$question_answer = ucfirst(strtolower(str_replace('_', ' ', Arr::get($meta,'filename'))));
 				$question_file = $target . $question_file_name;
 				$question_url =  Kohana::config('app.app_url') .'/images/movie_questions/' . $question_file_name;
@@ -96,11 +97,17 @@ class App_Build
 					"answers" => array(),
 				);			
 				// Add question
-				$new['questions'][] = $question; 
+				$new['questions'][] = $question;
 
+				// Copy original image
 				if ( ! copy($answer, $question_file))
 				{
 					throw new Kohana_Exception('Could not copy file.');
+				} else {
+					// Make image of particular size
+					Image::factory($question_file)
+							->resize(500, NULL)
+							->save($target . $question_thumb_name);
 				}
 			}
 		}
@@ -141,4 +148,6 @@ class App_Build
 			throw new Kohana_Exception("Could not list directory. {$dir}");
 		}
 	}
+
+
 }
