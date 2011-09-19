@@ -87,7 +87,7 @@ class App_Build
 				$question_thumb_name = md5(strtolower($answer)) . '_tab.' . Arr::get($meta, 'extension','');
 				$question_answer = ucfirst(strtolower(str_replace('_', ' ', Arr::get($meta,'filename'))));
 				$question_file = $target . $question_file_name;
-				$question_url =  Kohana::config('app.app_url') .'/images/movie_questions/' . $question_file_name;
+				$question_url =  Kohana::config('app.app_url') .'/images/movie_questions/' . $question_thumb_name;
 				// Make question
 				$question = array(
 					"body" => "Which film does the following image belong to?",
