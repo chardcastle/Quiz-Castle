@@ -41,5 +41,13 @@ class Question
 		return Arr::get($responses,0,"Could not compute a response");
 	}
 
+#	public function get_meta_as_json($index = 0)
+#	{
+#		$meta = array(
+#			'question_id' => $this->id,
+#			'position' => $index,
+#		);
+#		return json_encode($meta);
+#	}
 
 }
