@@ -13,7 +13,9 @@ $(function(){
 			var answer_data = {
 				question_id: meta[0],
 				position: meta[1],
-				answer: data.answer
+				answer: data.answer,
+				current_question: "#question_" + (parseInt(meta[1])),
+				next_question: "#question_" + (parseInt(meta[1]) + 1)
 			}
 			console.log(answer_data);
 			$.post(ENV.app_url+"/tab/answer", answer_data, function(json){
@@ -27,7 +29,7 @@ $(function(){
 					},
 					disable_input: function(json){
 						console.log('disabling input');
-						$("#question_"+answer_data.position+" .answers")
+						$(answer_data.current_question + " .answers")
 						.button({disabled: true})
 					},
 					refresh_cufon: function(){
@@ -35,20 +37,20 @@ $(function(){
 						Cufon.refresh();
 					},
 					refresh_question: function(){						
-						// Increase compatibility with unnamed functions
-						console.log(($("#question_"+(parseInt(answer_data.position) + 1)).length));
-						if ($("#question_"+(parseInt(answer_data.position) + 1)).length)
+						// Increase compatibility with unnamed functions						
+						if ($(answer_data.next_question).length)
 						{
+							console.log(answer_data.current_question);
 							window.setTimeout(function() {
 								console.log('running next');
 								   $("#questions")
-									.find("#question_"+(parseInt(answer_data.position)))
+									.find(answer_data.current_question)
 										.hide("slow")
 									.end()			
 									.find("#question_response")
 										.empty()
 									.end()
-									.find("#question_"+(parseInt(answer_data.position) + 1))	
+									.find(answer_data.next_question)
 										.show("fast")
 									.end();
 							}, 2000);
@@ -83,7 +85,7 @@ $(function(){
 							source: quiz.movie_title_options,
 							minLength: 0,
 							select: function( event, ui ) {
-//								//ui.item.value
+								// Make new data and answer answer
 								var data = {
 									meta: meta_data,
 									answer: ui.item.value
@@ -132,22 +134,5 @@ $(function(){
 	.end()
 	.find('.question:first')
 		.show(0)
-	.end()
-	.find('input[type=radio]')
-		.each(function(i, item){
-//			console.log($.data($(item),'meta').position);
-//			$(item)
-//			.change(function(){
-//				var item = $(item);
-//				console.log($.data(item,'meta').position);
-	//			var data = {
-	//				question_id: $(this).attr('data-value'),
-	//				position: jQuery.data($(this),'meta').position,
-	//				answer: $(this).val()
-	//			};
-	//			quiz.answer_question(data);
-//			})
-		})
-
 	.end()	
 });

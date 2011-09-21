@@ -1,5 +1,7 @@
-		<h1><?php echo i18n::get('tab_intro'); ?></h1>
-		<h2>This is for the lols</h2>
+		<span>
+			<h1 class="title"><?php echo i18n::get('tab_intro'); ?></h1>
+		</span>
+		<span class="title inverted"><?php echo i18n::get('tab_blurb') ?></span>
 		<?php if ($errors): ?>
 			<p class="message">Some errors were encountered, please check the details you entered.</p>
 			<ul class="errors">

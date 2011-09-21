@@ -51,18 +51,20 @@ table {
 /* End reset */
 body {
 	font-family: 'Lucida Grande',Lucida,Verdana,Arial,Helvetica,sans-serif;
-	color: #5F5F5F; /* Default grey from global website */
+	color: #fff; /* Default grey from global website */
 	font-size: 62.5%;
 }
 h1, h2 { font-weight: bold; } 
-h1, h2, h3, h4, h5 { font-size: 6em; color: #F98602; font-weight: bold; }
-h2, h3, h4, h5 { font-size: 2.5em; color: #1F5075;/* Dark blue */}
-h4, h5 { font-size: 2em; }
+h1, h2, h3, h4, h5 { font-size: 4em; font-weight: bold; }
+h2, h3, h4, h5 { font-size: 2.5em; /* Dark blue */}
+h4, h5, .bold { font-size: 2em; }
 .question { margin: 10px 0; }
-#question_response { color: #DB4865;/* Bright pink */ font-size: 3em; height: 90px; }
+.title { padding: 10px; background: #000 }
+.title.inverted { padding: 2px; background: #fff; color: #000; margin-left: 10px; }
+#question_response { color: #6ed232;/* Bright green */ font-size: 3em; height: 90px; }
 .clear { clear: both;}
 strong {font-weight: bold;}
 p, li { font-size: 1.3em; margin: 10px 0; }
-#global_outer { width: 500px; background: #b4e4ed url(../images/tab_bg.jpg) no-repeat top left; padding: 20px 10px 20px; }
+#global_outer { width: 500px; background: #b4e4ed url(../images/tab_bg_v1.jpg) no-repeat top left; padding: 20px 10px 20px; }
 #app_error h3 { font-size: 1..2em; color: #ccc; }
 

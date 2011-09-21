@@ -1,7 +1,7 @@
 <?php $name = "answers[{$question->id}]"; ?>
 
 <div class="question" id="question_<?php echo $index ?>">
-	<h4>Question <?php echo $index ?>) of <?php echo $questions ?></h4>
+	<h4>Question <?php echo $index ?> of <?php echo $questions ?></h4>
 	<p><?php echo $question->body ?></p>
 
 	<?php if ($question->type == 'movie'): ?>
@@ -10,7 +10,7 @@
 		<form method="post" action="<?php echo Kohana::config('app.app_url') ?>/images/movie_questions/answers.xml" class="answers movie_answer">
 
 			<div class="ui-widget">
-				<label for="movie_names">Type your answer here: </label>
+				<label for="movie_names" class="bold"><?php echo i18n::get('movie_title_entry_label') ?></label>
 				<input type="text" class="movie_names" name="<?php echo $name ?>" data-value="<?php echo $question->id ?>,<?php echo $index ?>" />
 			</div>
 

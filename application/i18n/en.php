@@ -2,7 +2,9 @@
 
 return array (
   'tab_title' => 'Quiz',
-  'tab_intro' => 'Welcome to my quiz!',
+  'tab_intro' => 'The Hard Quiz',
+  'tab_blurb' => 'Built by Chris Hardcastle with movie questions by quiz master Milner.',
+  'movie_title_entry_label' => 'This movie is called:',
   'thanks_for_playing' => 'Thanks for playing my game.',
   'responses' => 
   array (
