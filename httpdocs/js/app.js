@@ -56,7 +56,12 @@ $(function(){
 							}, 2000);
 						} else {
 							console.log('end of quiz');
-							$('#submit').button({ disabled: false });
+							$('#quiz').submit(function(e){
+								e.preventDefault();
+								$.post($(this).attr('action'), $(this).serialize(), function(){
+									console.log('json');	
+								}, 'json');
+							});
 						}
 					}
 				}
@@ -107,7 +112,7 @@ $(function(){
 		.buttonset()
 	.end()
 	.find("#submit")
-		.button({ disabled: true })
+		.remove()
 	.end()
 	.find('.question')
 		.hide(0)
