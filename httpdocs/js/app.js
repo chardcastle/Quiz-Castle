@@ -8,8 +8,15 @@ $(function(){
 	
 		answer_question: function(data)
 		{
-			console.log(data);
-			$.post(ENV.app_url+"/tab/answer", data, function(json){
+
+			var meta = data.meta.split(',');
+			var answer_data = {
+				question_id: meta[0],
+				position: meta[1],
+				answer: data.answer
+			}
+			console.log(answer_data);
+			$.post(ENV.app_url+"/tab/answer", answer_data, function(json){
 				// create a deferred object
 				var dfd = $.Deferred();
 				var action = {
@@ -20,7 +27,7 @@ $(function(){
 					},
 					disable_input: function(json){
 						console.log('disabling input');
-						$("#question_"+data.position+" .answers")
+						$("#question_"+answer_data.position+" .answers")
 						.button({disabled: true})
 					},
 					refresh_cufon: function(){
@@ -29,19 +36,19 @@ $(function(){
 					},
 					refresh_question: function(){						
 						// Increase compatibility with unnamed functions
-				
-						if ($("#question_"+(parseInt(data.position) + 1)).length)
+						console.log(($("#question_"+(parseInt(answer_data.position) + 1)).length));
+						if ($("#question_"+(parseInt(answer_data.position) + 1)).length)
 						{
 							window.setTimeout(function() {
 								console.log('running next');
 								   $("#questions")
-									.find("#question_"+(parseInt(data.position)))
+									.find("#question_"+(parseInt(answer_data.position)))
 										.hide("slow")
 									.end()			
 									.find("#question_response")
 										.empty()
 									.end()
-									.find("#question_"+(parseInt(data.position) + 1))	
+									.find("#question_"+(parseInt(answer_data.position) + 1))	
 										.show("fast")
 									.end();
 							}, 2000);
@@ -70,21 +77,18 @@ $(function(){
 				}).get();
 				$( ".movie_names" )
 					.each(function(i, item){
+						var meta_data = $(item).attr("data-value");
 						$(item)
 						.autocomplete({
 							source: quiz.movie_title_options,
 							minLength: 0,
 							select: function( event, ui ) {
-								var item = $(this).parent().parent().find('.answers');
-								console.log($.data(item,'meta').position);
-//								console.log($(this).data('position'));
 //								//ui.item.value
-//								var data = {
-//									question_id: $(this).attr('data-value'),
-//									position: jQuery.data($(item),'meta').position,
-//									answer: $(this).val()
-//								};
-//								quiz.answer_question(data);
+								var data = {
+									meta: meta_data,
+									answer: ui.item.value
+								};
+								quiz.answer_question(data);
 							}
 						})
 					})
@@ -106,30 +110,15 @@ $(function(){
 	.find('.question')
 		.hide(0)
 	.end()
-	.find('.answers')
-		.each(function(i, item){
-			var current_position = parseInt(i) + 1;
-			$(item)
-			.find('input')
-			.data('meta',{position : current_position})
-//				.each(function(i, sub_item){
-//					console.log($(sub_item).attr('name'));
-//					$.data(sub_item,'meta',{position : current_position});
-//				})
-			.end();
-		})					
-	.end()
-	.find('.answers')
+	.find('.question')
 		.each(function(i, item){			
 			$(item)
-			.find('input')
-				.each(function(i, sub_item){
+			.find('input[type=radio]')
+				.each(function(i, item){
 					$(item)
 					.change(function(){
-						console.log($.data(sub_item,'meta').position);
 						var data = {
-							question_id: $(this).attr('data-value'),
-							position: $.data(sub_item,'meta').position,
+							meta: $(item).attr("data-value"),
 							answer: $(this).val()
 						};
 						quiz.answer_question(data);
