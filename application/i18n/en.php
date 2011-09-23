@@ -41,6 +41,8 @@ return array (
         2 => 'The Magna carter',
         3 => 'The Declaration of Independence.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     1 => 
     array (
@@ -54,6 +56,8 @@ return array (
         2 => 'Chess',
         3 => 'The Game of Roulette.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     2 => 
     array (
@@ -67,6 +71,8 @@ return array (
         2 => 'Barak Obama',
         3 => 'George Bush.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     3 => 
     array (
@@ -80,6 +86,8 @@ return array (
         2 => 'Siege of Acre',
         3 => 'The Cold War.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     4 => 
     array (
@@ -93,6 +101,8 @@ return array (
         2 => 'The Greeks',
         3 => 'The Chinese.',
       ),
+      'is_bonus' => true,
+      'points' => 175,
     ),
     5 => 
     array (
@@ -106,6 +116,8 @@ return array (
         2 => 'An axe ',
         3 => 'A net.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     6 => 
     array (
@@ -119,6 +131,8 @@ return array (
         2 => '1944',
         3 => '1968.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     7 => 
     array (
@@ -132,6 +146,8 @@ return array (
         2 => 'Battle of Jena',
         3 => 'The Korean War.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     8 => 
     array (
@@ -145,6 +161,8 @@ return array (
         2 => 'Boss',
         3 => 'Charlemagne.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     9 => 
     array (
@@ -158,6 +176,8 @@ return array (
         2 => 'Nelson Mandela',
         3 => 'Mikail Gorbachev.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     10 => 
     array (
@@ -171,6 +191,8 @@ return array (
         2 => 'Mount Olympic',
         3 => 'Mount Vesuvius.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     11 => 
     array (
@@ -184,6 +206,8 @@ return array (
         2 => 'Jack Black',
         3 => 'Jimmy Carter.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     12 => 
     array (
@@ -197,6 +221,8 @@ return array (
         2 => 'Silas',
         3 => 'Selma.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     13 => 
     array (
@@ -210,6 +236,8 @@ return array (
         2 => 'Texas Pete',
         3 => 'John Connally.',
       ),
+      'is_bonus' => true,
+      'points' => 150,
     ),
     14 => 
     array (
@@ -223,6 +251,8 @@ return array (
         2 => 'Iron Eagle',
         3 => 'Medal of Honor.',
       ),
+      'is_bonus' => true,
+      'points' => 182,
     ),
     15 => 
     array (
@@ -236,6 +266,8 @@ return array (
         2 => 'The rocket launcher',
         3 => 'The Tank',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     16 => 
     array (
@@ -249,6 +281,8 @@ return array (
         2 => 'Malibu',
         3 => 'Sacramento.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     17 => 
     array (
@@ -262,6 +296,8 @@ return array (
         2 => 'George Bush',
         3 => 'Jimmy Carter.',
       ),
+      'is_bonus' => true,
+      'points' => 150,
     ),
     18 => 
     array (
@@ -275,6 +311,8 @@ return array (
         2 => 'Louise Luther',
         3 => 'Martin Luther King Jr.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     19 => 
     array (
@@ -288,6 +326,8 @@ return array (
         2 => 'The world wide web',
         3 => 'The Contract With America.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     20 => 
     array (
@@ -301,6 +341,8 @@ return array (
         2 => 'Donald Rogers',
         3 => 'William Wallace.',
       ),
+      'is_bonus' => true,
+      'points' => 147,
     ),
     21 => 
     array (
@@ -314,6 +356,8 @@ return array (
         2 => 'American commonwealth',
         3 => 'The Confederate States of America.',
       ),
+      'is_bonus' => true,
+      'points' => 125,
     ),
     22 => 
     array (
@@ -327,6 +371,8 @@ return array (
         2 => 'Globalisation',
         3 => 'Apartheid.',
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     23 => 
     array (
@@ -340,6 +386,8 @@ return array (
         2 => 'El Smell',
         3 => 'El Cid.',
       ),
+      'is_bonus' => true,
+      'points' => 150,
     ),
     24 => 
     array (
@@ -350,6 +398,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     25 => 
     array (
@@ -360,6 +410,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => true,
+      'points' => 182,
     ),
     26 => 
     array (
@@ -370,6 +422,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     27 => 
     array (
@@ -380,6 +434,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     28 => 
     array (
@@ -390,6 +446,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     29 => 
     array (
@@ -400,6 +458,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     30 => 
     array (
@@ -410,6 +470,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     31 => 
     array (
@@ -420,6 +482,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     32 => 
     array (
@@ -430,6 +494,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     33 => 
     array (
@@ -440,6 +506,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => true,
+      'points' => 125,
     ),
     34 => 
     array (
@@ -450,6 +518,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => true,
+      'points' => 150,
     ),
     35 => 
     array (
@@ -460,6 +530,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => true,
+      'points' => 175,
     ),
     36 => 
     array (
@@ -470,6 +542,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     37 => 
     array (
@@ -480,6 +554,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     38 => 
     array (
@@ -490,6 +566,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     39 => 
     array (
@@ -500,6 +578,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     40 => 
     array (
@@ -510,6 +590,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     41 => 
     array (
@@ -520,6 +602,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     42 => 
     array (
@@ -530,6 +614,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     43 => 
     array (
@@ -540,6 +626,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
     44 => 
     array (
@@ -550,6 +638,8 @@ return array (
       'answers' => 
       array (
       ),
+      'is_bonus' => false,
+      'points' => 100,
     ),
   ),
 );

@@ -68,15 +68,19 @@ class App_Build
 		{
 			throw new Kohana_Exception('Application is not in desired locale or is unable to write to language file.');
 		}
+		$bonus_points = array(125,147,150,175,182,200);
 		$bonus_questions = array_rand(i18n::get('questions'),11);
-		foreach ($questions as $id => $question)
+		Kohana_Log::instance()->add(Kohana_Log::DEBUG,'Bonus questions are :questions', array(':questions'=>print_r($bonus_questions,true)));
+		foreach (i18n::get('questions') as $id => $question)
 		{
-			if ( ! in_array($id, array_keys($bonus_questions)))
+			if ( ! in_array($id, $bonus_questions))
 			{
 				$value = 100;
 				$question["is_bonus"] = false;
 			} else {
-				$value = array_rand(array(125,147,150,175,182,200),1);
+				$value = array_rand($bonus_points,1);
+				$value = (int)Arr::get($bonus_points,$value,100);
+				Kohana_Log::instance()->add(Kohana_Log::DEBUG,'Bonus question value is :val', array(':val'=>$value));
 				$question["is_bonus"] = true;
 			}
 			$question["points"] = $value;			
