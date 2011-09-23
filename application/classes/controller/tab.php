@@ -30,18 +30,23 @@ class Controller_Tab extends Controller_Global
 				
 		if ($post->check())
 		{	
+			$is_ok = true;
+			// Load
 			$entry = new Entry($post);
-			$score = ORM::factory('score');
-			foreach ($post as $key => $value)
-			{
-				$score->set($key, $value);
-			}
+			$quiz = new Quiz($entry->question_sequence);
 			$result = $quiz->get_score($entry);
-			$score->set('score_breakdown', $result->break_down);
+			// Set
+			$score = ORM::factory('score');
+			$score->set('score_breakdown', serialize($result->break_down));
+			$score->set('question_ids', $entry->question_sequence);
 			$score->set('score', $result->score);
+			$score->set('user_id', $this->user->get_id());
+			$score->set('entry_token', $entry->quiz_token);
+			$score->set('submitted', Model_Score::get_datetime());
+
 			try
 			{
-#				$view->quiz->add_new_entry($entry, $quiz, $this->template->user);
+				// Create new entry
 				$score->create();
 
 			} catch(Exception $e) {
@@ -49,19 +54,32 @@ class Controller_Tab extends Controller_Global
 				$view->errors = array($e->__toString());
 				$this->response->body($view);
 			}
-			// if ajax
-				// echo done
-			// else
-				// redirect to app permissions process
-				// tab/authorise
 		} else {
 			$view->errors = $post->errors('validation');
 			$view->existing_answers = Arr::get($_POST,'answers',array());
 		}
 		$this->template->body = $view->render();
-
 	}
 	
+	public function action_finish()
+	{
+		$view = View::factory('tab/finish');	
+		$view->result = ORM::factory('score')
+				->where('user_id', '=', $this->template->user->get_id())
+				->find();
+		$this->template->body = $view->render();
+	}
+
+	public function action_finish_ajax()
+	{
+		$view = View::factory('tab/finish');	
+		$view->result = ORM::factory('score')
+				->where('user_id', '=', $this->template->user->get_id())
+				->find();
+		echo $view->render();
+		exit;
+	}
+
 	/**
 	* Ajax only!
 	*/

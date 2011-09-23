@@ -9,8 +9,8 @@
 		<img src="<?php echo $question->image_url ?>" class="movie_question" alt="Question image" />	
 		<form method="post" action="<?php echo Kohana::config('app.app_url') ?>/images/movie_questions/answers.xml" class="answers movie_answer">
 
-			<div class="ui-widget">
-				<label for="movie_names" class="bold"><?php echo i18n::get('movie_title_entry_label') ?></label>
+			<div class="ui-widget" style="margin: 10px">
+				<label for="movie_names" class="bold"><?php echo i18n::get('movie_title_entry_label') ?></label><br clear="all"/>
 				<input type="text" class="movie_names ui-corner-all" name="<?php echo $name ?>" data-value="<?php echo $question->id ?>,<?php echo $index ?>" />
 			</div>
 

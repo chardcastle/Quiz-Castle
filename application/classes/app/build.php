@@ -58,6 +58,42 @@ class App_Build
 		return true;
 	}
 	
+	public static function add_points()
+	{
+		// Get all site copy
+		$lang = i18n::lang();
+		$app_i18n = i18n::load($lang);
+		$lang_file = APPPATH . 'i18n/en.php';
+		if ($lang !== 'en-us' || ! is_writable($lang_file))
+		{
+			throw new Kohana_Exception('Application is not in desired locale or is unable to write to language file.');
+		}
+		$bonus_questions = array_rand(i18n::get('questions'),11);
+		foreach ($questions as $id => $question)
+		{
+			if ( ! in_array($id, array_keys($bonus_questions)))
+			{
+				$value = 100;
+				$question["is_bonus"] = false;
+			} else {
+				$value = array_rand(array(125,147,150,175,182,200),1);
+				$question["is_bonus"] = true;
+			}
+			$question["points"] = $value;			
+			$app_i18n["questions"][$id] = $question;
+		}
+		
+		$new_quiz_copy = Kohana::FILE_SECURITY . "\r\n\r\n";
+		$new_quiz_copy .= "return " . var_export($app_i18n,true) . ";";
+		// Dind path to i18n
+#		echo kohana_Debug::vars($lang_file);
+#		echo kohana_Debug::vars($new_quiz_copy);
+		if ( ! file_put_contents($lang_file, $new_quiz_copy))
+		{						
+			throw new Kohana_Exception('Could not write questions file xml.');
+		}
+	}
+
 	/**
 	* Make the list of movie questions	
 	*/
@@ -106,7 +142,7 @@ class App_Build
 				} else {
 					// Make image of particular size
 					Image::factory($question_file)
-							->resize(500, NULL)
+							->resize(480, NULL)
 							->save($target . $question_thumb_name);
 				}
 			}

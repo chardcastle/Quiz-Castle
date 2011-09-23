@@ -41,5 +41,19 @@ class Controller_Canvas extends Controller_Global
 		$this->template->body = 'done';
 
 	}
+	public function action_makepoints()
+	{
+
+		try 
+		{
+			App_Build::add_points();
+		}
+		catch (Exception $e)
+		{
+			throw new Http_Exception_500($e->__toString());
+		}
+		$this->template->body = 'done';
+
+	}
 
 } // End Welcome
