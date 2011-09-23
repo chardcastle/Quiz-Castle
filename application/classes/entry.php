@@ -4,7 +4,10 @@ class Entry
 {
 	public $submitted = null;
 	public $score = 0;
-	public $user;
+	public $score_breakdown = -1;
+	public $entry_token = null;
+	public $user = null;
+	public $question_ids = null;
 
 	public function __construct($data = array())
 	{
@@ -14,9 +17,10 @@ class Entry
 			{
 				$this->{$property} = $value;
 			}
-			$this->submitted = date('d/m/Y H:i:s');
+			$this->submitted = date('Y/m/d H:i:s');
 		}
 	}
+
 
 }
 

@@ -82,8 +82,10 @@ class Quiz
 				->set('user_id',$user->get_id());
 		try {
 			$score->save();
-		} catch(Exception $e){
-			die($e->__toString());
+			Kohana_Log::instance()->add(Kohana_Log::INFO, 'Query executed fine :query',array(':query'=>'Last query'));
+		} catch(Exception $e) {
+
+			Kohana_Log::instance()->add(Kohana_Log::ERROR, 'Exception saving :message ',array(':message'=>$e->__toString()));
 		}
 	}	
 

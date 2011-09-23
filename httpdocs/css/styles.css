@@ -64,6 +64,7 @@ h4, h5, .bold { font-size: 2em; }
 .title.inverted { padding: 2px; background: #fff; color: #000; margin-left: 10px; }
 #question_response { color: #6ed232;/* Bright green */ font-size: 3em; height: 90px; }
 .movie_question { border: 2px solid #fff }
+.movie_names { padding: 2px; border: 1px solid #fff; color: #2C4359; }
 .clear { clear: both;}
 strong {font-weight: bold;}
 p, li { font-size: 1.3em; margin: 10px 0; }

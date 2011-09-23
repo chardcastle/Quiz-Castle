@@ -31,7 +31,10 @@ class Model_Score extends ORM
 	*/		
 	public $entry_token;	
 
+	public $submitted;
 	
+	public $question_ids;	
+
  	protected $_rules = array(
 		'entry_token' => array(
 		    'not_empty',      
@@ -40,7 +43,11 @@ class Model_Score extends ORM
 		    'not_empty',      
 		),   
     );	
-
 	
+	public static function get_datetime()
+	{
+		return date('Y/m/d H:i:s');
+	}
+
 }
 

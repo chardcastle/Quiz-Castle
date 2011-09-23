@@ -11,7 +11,7 @@
 
 			<div class="ui-widget">
 				<label for="movie_names" class="bold"><?php echo i18n::get('movie_title_entry_label') ?></label>
-				<input type="text" class="movie_names" name="<?php echo $name ?>" data-value="<?php echo $question->id ?>,<?php echo $index ?>" />
+				<input type="text" class="movie_names ui-corner-all" name="<?php echo $name ?>" data-value="<?php echo $question->id ?>,<?php echo $index ?>" />
 			</div>
 
 		</form>	
