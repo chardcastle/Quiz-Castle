@@ -59,7 +59,7 @@ class Quiz
 		$result = new Result();
 		$result->number_of_questions = count($entry->answers);
 		
-		foreach ($this->question_ids as $question_id)
+		foreach ($this->question_ids as $question_id)	
 		{
 			$question = new Question();
 			$question =  $question->get_question_by_id($question_id);

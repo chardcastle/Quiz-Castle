@@ -22,20 +22,30 @@ class Controller_Tab extends Controller_Global
 		$question_ids = Arr::get($_POST,'question_sequence',null);	
 		$quiz = new Quiz($question_ids);
 
-		$view->quiz = $quiz;		
+		$view->quiz = $quiz;
 		$view->errors = null;
 		$post = Validation::factory($_POST)		
 				->rule('answers', 'not_empty')
 				->rule('answers', 'Quiz::is_all_questions_answered');
 				
 		if ($post->check())
-		{						
-			$entry = new Entry($post);			
-			$entry->results = $quiz->get_score($entry);
-			try {
-				$view->quiz->add_new_entry($entry, $quiz, $this->template->user);
-			} catch(Exception $e)
+		{	
+			$entry = new Entry($post);
+			$score = ORM::factory('score');
+			foreach ($post as $key => $value)
 			{
+				$score->set($key, $value);
+			}
+			$result = $quiz->get_score($entry);
+			$score->set('score_breakdown', $result->break_down);
+			$score->set('score', $result->score);
+			try
+			{
+#				$view->quiz->add_new_entry($entry, $quiz, $this->template->user);
+				$score->create();
+
+			} catch(Exception $e) {
+
 				$view->errors = array($e->__toString());
 				$this->response->body($view);
 			}

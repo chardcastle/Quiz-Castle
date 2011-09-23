@@ -8,6 +8,8 @@ class Entry
 	public $entry_token = null;
 	public $user = null;
 	public $question_ids = null;
+	public $question_sequence = null;
+	public $answers;
 
 	public function __construct($data = array())
 	{
@@ -20,7 +22,10 @@ class Entry
 			$this->submitted = date('Y/m/d H:i:s');
 		}
 	}
-
+	public function to_array()
+	{
+		return get_object_vars($this);
+	}
 
 }
 
