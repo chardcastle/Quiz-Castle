@@ -6,12 +6,18 @@ class Question
 	public $correct_answer = null;
 	public $answers = null;
 	public $id = null;
+	public $is_bonus;
+	public $points;
 
 	public function __construct($data = array())
 	{
-		foreach($data as $property => $value)
+		if ( ! empty($data))
 		{
-			$this->{$property} = $value;
+			foreach($data as $property => $value)
+			{
+				$this->{$property} = $value;
+			}
+			$this->is_bonus = ($this->points > 100);
 		}
 	}
 

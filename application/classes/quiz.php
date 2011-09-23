@@ -68,7 +68,7 @@ class Quiz
 			if ($user_answer == $question->correct_answer)
 			{
 				$is_correct = true;
-				$result->score = (int)$result->score + 1;
+				$result->score = (int)$result->score + $question->points;
 			}		
 			$result->add_question_result($question_id, $is_correct);
 		}

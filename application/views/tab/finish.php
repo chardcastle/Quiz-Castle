@@ -1,5 +1,5 @@
 <?php
-var_dump($result->score);
+var_dump($result);var_dump($info);
 ?>
 
 Finished!

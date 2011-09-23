@@ -48,11 +48,11 @@ class Controller_Tab extends Controller_Global
 			{
 				// Create new entry
 				$score->create();
-
+				$this->response->redirect('tab/finish/'.$entry->entry_token);
 			} catch(Exception $e) {
 
 				$view->errors = array($e->__toString());
-				$this->response->body($view);
+				$this->response->body($view);				
 			}
 		} else {
 			$view->errors = $post->errors('validation');
@@ -61,24 +61,16 @@ class Controller_Tab extends Controller_Global
 		$this->template->body = $view->render();
 	}
 	
-	public function action_finish()
+	public function action_finish($entry_token)
 	{
 		$view = View::factory('tab/finish');	
-		$view->result = ORM::factory('score')
-				->where('user_id', '=', $this->template->user->get_id())
-				->find();
+		$score = ORM::factory('score')	
+				->get_score($entry_token);
+		$view->result = $score;
+		$view->info = ORM::factory('score')->last_query();
 		$this->template->body = $view->render();
 	}
 
-	public function action_finish_ajax()
-	{
-		$view = View::factory('tab/finish');	
-		$view->result = ORM::factory('score')
-				->where('user_id', '=', $this->template->user->get_id())
-				->find();
-		echo $view->render();
-		exit;
-	}
 
 	/**
 	* Ajax only!

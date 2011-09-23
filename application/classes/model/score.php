@@ -48,6 +48,22 @@ class Model_Score extends ORM
 	{
 		return date('Y/m/d H:i:s');
 	}
-
+	
+	public function get_score($entry_token)
+	{
+		$values = ORM::factory('score')
+				->where('entry_token', '=', $entry_token)
+				->find()
+				->as_array();
+		Kohana_Log::instance()->add(Kohana_Log::DEBUG,
+				'Getting values for :entry_token example is :example',
+				array(':entry_token'=>$entry_token,':example'=>print_r(Arr::get($values,'score','x'),true))
+		);
+		return array(
+			'score' => Arr::get($values,'score','y'),
+			'score_breakdown' => Arr::get($values,'score_breakdown',''),
+			'question_ids' => Arr::get($values,'question_ids',''),
+		);
+	}
 }
 
