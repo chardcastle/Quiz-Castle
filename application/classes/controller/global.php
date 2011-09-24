@@ -4,7 +4,7 @@ abstract class Controller_Global extends Controller_Template
 {
  
     public $page_title;
-
+	public $extra_scripts;
 
     public function before()
     {
@@ -17,7 +17,11 @@ abstract class Controller_Global extends Controller_Template
 		$this->template->app_url = Kohana::config('app.app_url');	
 		$this->template->home_url = Kohana::config('app.home_address');
 		$this->template->site_administrators = Kohana::config('app.admins');
-	
+
+		// Globals	
+		$this->template->extra_scripts = array();
+		View::bind_global('extra_scripts', $this->template->extra_scripts);
+
 		// Facebook vars
 		$this->template->facebook = Kohana::config('app.facebook');
 

@@ -66,9 +66,41 @@ class Controller_Tab extends Controller_Global
 		$view = View::factory('tab/finish');	
 		$score = ORM::factory('score')	
 				->get_score($entry_token);
-		$view->result = $score;
+
+		$result = new Result();	
+		$result->number_of_questions = Arr::get($score,'number_of_questions','');	
+		$result->score = Arr::get($score,'score','');
+		$result->score_breakdown = Arr::get($score,'score_breakdown','');
+		$result->question_ids = Arr::get($score,'question_ids','');
+	
+		$quiz = new Quiz($result->question_ids);
+		$responses = unserialize($result->score_breakdown);
+
+		$html = '';
+		$first = true;
+		foreach ($quiz->questions as $label => $question)
+		{
+			$label = (int)$label + 1;			
+			$last = ($label == $result->number_of_questions);
+			$html .= View::factory('tab/game_review')
+					->bind('label', $label)
+					->bind('last', $last)
+					->bind('first', $first)
+					->bind('answer', $question->correct_answer)
+					->bind('question', $question->body)
+					->bind('is_correct', $responses[$question->id])
+					->bind('is_bonus', $question->is_bonus)
+					->bind('points', $question->points)
+					->render();
+			$first = false;
+		}
+		
+		$view->review = $html;
+		$view->result = $result;
 		$view->info = ORM::factory('score')->last_query();
+
 		$this->template->body = $view->render();
+		$this->template->extra_scripts[] = 'jquery.qtip-1.0.0-rc3.min';
 	}
 
 

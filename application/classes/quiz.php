@@ -75,22 +75,15 @@ class Quiz
 		return $result;			
 	}
 
-	public function add_new_entry(Entry $entry, Quiz $quiz, Model_User $user)
-	{
-		$score = ORM::factory('score')
-				->values($entry)
-				->set('user_id',$user->get_id());
-		try {
-			$score->save();
-			Kohana_Log::instance()->add(Kohana_Log::INFO, 'Query executed fine :query',array(':query'=>'Last query'));
-		} catch(Exception $e) {
-
-			Kohana_Log::instance()->add(Kohana_Log::ERROR, 'Exception saving :message ',array(':message'=>$e->__toString()));
-		}
-	}	
-
 	public static function is_all_questions_answered($answers)
 	{
 		return (count($answers) == Kohana::config('app.questions_per_contest'));	
+	}
+	/**
+	* @param array $responses Contains user answers to questions Key=question id, value = is correct state
+	*/
+	public function review_score_against_questions($responses)
+	{
+
 	}
 }

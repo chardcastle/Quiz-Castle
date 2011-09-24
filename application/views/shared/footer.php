@@ -3,6 +3,13 @@
 	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/app.js?cache_breaker=<?php echo $cache ?>"></script>  
    	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/fonts/cufon-yui.js?cache_breaker=<?php echo $cache ?>"></script>
 	<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/fonts/Play_400-Play_700.font.js?cache_breaker=<?php echo $cache ?>"></script>    
+	
+	<?php if ( ! empty($extra_scripts)): ?>
+		<?php foreach ($extra_scripts as $file): ?>
+		<script type="text/javascript" src="<?php echo Kohana::config('app.app_url') ?>/js/<?php echo $file ?>.js?cache_breaker=<?php echo $cache ?>"></script>
+		<?php endforeach; ?>
+	<?php endif; ?>
+
 	<!-- font replacement -->
 	<script type="text/javascript">		
 		function replace_fonts()

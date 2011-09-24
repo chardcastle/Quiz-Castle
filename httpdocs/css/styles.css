@@ -69,6 +69,6 @@ h4, h5, .bold { font-size: 2em; }
 .clear { clear: both;}
 strong {font-weight: bold;}
 p, li { font-size: 1.3em; margin: 10px 0; }
-#global_outer { width: 500px; background: #b4e4ed url(../images/tab_bg_v1.jpg) no-repeat top left; padding: 20px 10px 20px; }
+#global_outer { width: 500px; background: #0794AF url(../images/tab_bg_v1.jpg) no-repeat top left; padding: 20px 10px 20px; }
 #app_error h3 { font-size: 1..2em; color: #ccc; }
 

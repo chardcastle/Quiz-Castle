@@ -49,6 +49,9 @@ class Model_Score extends ORM
 		return date('Y/m/d H:i:s');
 	}
 	
+	/**
+	* Used for presenting end of play results
+	*/
 	public function get_score($entry_token)
 	{
 		$values = ORM::factory('score')
@@ -59,10 +62,13 @@ class Model_Score extends ORM
 				'Getting values for :entry_token example is :example',
 				array(':entry_token'=>$entry_token,':example'=>print_r(Arr::get($values,'score','x'),true))
 		);
+		$question_ids = Arr::get($values,'question_ids',0);
+		$count = count(explode(',',$question_ids));
 		return array(
 			'score' => Arr::get($values,'score','y'),
 			'score_breakdown' => Arr::get($values,'score_breakdown',''),
-			'question_ids' => Arr::get($values,'question_ids',''),
+			'question_ids' => $question_ids,
+			'number_of_questions' => $count,
 		);
 	}
 }

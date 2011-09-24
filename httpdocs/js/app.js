@@ -140,4 +140,14 @@ $(function(){
 	.find('.question:first')
 		.show(0)
 	.end()	
+	.find('.review_answer')
+		.each(function(i, item){
+			$(item)
+			.qtip({
+				content: $(item).find('.jtip').html(),
+				show: 'mouseover',
+				hide: 'mouseout'
+			});
+		})
+	.end();
 });
