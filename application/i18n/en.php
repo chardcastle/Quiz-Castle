@@ -3,9 +3,10 @@
 return array (
   'tab_title' => 'Quiz',
   'tab_intro' => 'The Super Fun Quiz',
-  'tab_blurb' => 'Built by Chris Hardcastle with movie questions by quiz master Milner.',
+  'tab_blurb' => '<p>Built by Chris Hardcastle with movie questions by quiz master Milner.</p>',
   'movie_title_entry_label' => 'This movie is called:',
   'thanks_for_playing' => 'Thanks for playing my game.',
+  'game_results' => '<p>The table below shows which answers you got right. Rollover on the answer for a reminder of the question.</p>',
   'icon' => array(
 		'correct' => '^',
 		'bonus' => 'b',

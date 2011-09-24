@@ -5,8 +5,7 @@
 	<p><?php echo $question->body ?></p>
 
 	<?php if ($question->type == 'movie'): ?>
-
-		<img src="<?php echo $question->image_url ?>" class="movie_question" alt="Question image" />	
+			
 		<form method="post" action="<?php echo Kohana::config('app.app_url') ?>/images/movie_questions/answers.xml" class="answers movie_answer">
 
 			<div class="ui-widget" style="margin: 10px">
@@ -15,6 +14,7 @@
 			</div>
 
 		</form>	
+		<img src="<?php echo $question->image_url ?>" class="movie_question" alt="Question image" />
 
 	<?php elseif ($question->type == 'multi_choice'): ?>
 

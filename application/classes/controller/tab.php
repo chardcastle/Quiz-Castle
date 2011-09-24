@@ -91,6 +91,7 @@ class Controller_Tab extends Controller_Global
 					->bind('is_correct', $responses[$question->id])
 					->bind('is_bonus', $question->is_bonus)
 					->bind('points', $question->points)
+					->bind('score', $result->score)
 					->render();
 			$first = false;
 		}

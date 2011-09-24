@@ -58,17 +58,37 @@ img { display: block; }
 h1, h2 { font-weight: bold; } 
 h1, h2, h3, h4, h5 { font-size: 4em; font-weight: bold; }
 h2, h3, h4, h5, .font_icon { font-size: 2.5em; /* Dark blue */}
+td, th { valign: top; text-align: left; padding: 6px;  }
+.opaque {opacity:0.4; filter:alpha(opacity=40); /* For IE8 and earlier */}
+
+#game_results .font_icon .bonus { color: Yellow; }
 h4, h5, .bold { font-size: 2em; }
 #questions { padding-top : 30px; }
 .question { margin: 10px 0; }
 .title { padding: 10px; background: #000 }
 .title.inverted { padding: 2px; background: #fff; color: #000; margin-left: 10px; }
-#question_response { color: #6ed232;/* Bright green */ font-size: 3em; height: 90px; }
+#question_response { color: #0FFF3C;/* Bright green */ font-size: 3em; height: 90px; }
 .movie_question { border: 5px solid #fff; width: 480px; margin: 0 auto; }
 .movie_names { padding: 2px; border: 1px solid #fff; color: #2C4359; }
 .clear { clear: both;}
 strong {font-weight: bold;}
 p, li { font-size: 1.3em; margin: 10px 0; }
 #global_outer { width: 500px; background: #0794AF url(../images/tab_bg_v1.jpg) no-repeat top left; padding: 20px 10px 20px; }
-#app_error h3 { font-size: 1..2em; color: #ccc; }
 
+#app_error h3 { font-size: 1.2em; color: #ccc; }
+#game_results th { color: #0FFF3C;/* Bright green */ font-size: 2em }
+.total { font-size: 2em; }
+#review .total { float: right; }
+#game_results { width: 100% }
+
+#game_results tr { border: 3px solid #033C45; }
+#game_results tr.no_border { border: none; }
+#game_results tr.top { border-bottom: none; border-top: 3px solid #033C45;}
+#game_results tr { border-top: none; border-bottom: none; }
+#game_results tr.bottom { border-top: none; border-bottom: 3px solid #033C45;}
+#game_results td { line-height: 1.3em; }
+
+#game_results .font_icon .correct, .total .score { color: #0FFF3C;/* Bright green */ }
+#game_results .font_icon .incorrect { color: #DB0404; }
+#game_results tr.correct { background: transparent url(../images/correct_bg.png) repeat top left; }
+#game_results tr.incorrect {  background: transparent url(../images/incorrect_bg.png) repeat top left; }
