@@ -146,7 +146,14 @@ $(function(){
 			.qtip({
 				content: $(item).find('.jtip').html(),
 				show: 'mouseover',
-				hide: 'mouseout'
+				tip: 'topLeft',
+				hide: 'mouseout',
+					position: {
+					  corner: {
+						 target: 'topRight',
+						 tooltip: 'bottomLeft'
+					  }
+					}
 			});
 		})
 	.end();

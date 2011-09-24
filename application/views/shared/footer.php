@@ -15,6 +15,7 @@
 		function replace_fonts()
 		{
 			Cufon.replace('h1, h2, h3, h4, h5, h6, strong, #question_response, .bold', { fontFamily: 'Play' });
+			Cufon.replace('.font_icon', { fontFamily: 'Guifx v2 Transports' });
 		}
 		replace_fonts();
 	</script>

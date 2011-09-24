@@ -101,6 +101,7 @@ class Controller_Tab extends Controller_Global
 
 		$this->template->body = $view->render();
 		$this->template->extra_scripts[] = 'jquery.qtip-1.0.0-rc3.min';
+		$this->template->extra_scripts[] = 'fonts/Guifx_v2_Transports_400.font';
 	}
 
 
