@@ -57,7 +57,7 @@ body {
 img { display: block; }
 h1, h2 { font-weight: bold; } 
 h1, h2, h3, h4, h5 { font-size: 4em; font-weight: bold; }
-h2, h3, h4, h5 { font-size: 2.5em; /* Dark blue */}
+h2, h3, h4, h5, .font_icon { font-size: 2.5em; /* Dark blue */}
 h4, h5, .bold { font-size: 2em; }
 #questions { padding-top : 30px; }
 .question { margin: 10px 0; }

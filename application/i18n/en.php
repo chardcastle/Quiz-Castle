@@ -6,6 +6,11 @@ return array (
   'tab_blurb' => 'Built by Chris Hardcastle with movie questions by quiz master Milner.',
   'movie_title_entry_label' => 'This movie is called:',
   'thanks_for_playing' => 'Thanks for playing my game.',
+  'icon' => array(
+		'correct' => '^',
+		'bonus' => 'b',
+		'incorrect' => 'x',
+  ),
   'responses' => 
   array (
     'correct' => 
