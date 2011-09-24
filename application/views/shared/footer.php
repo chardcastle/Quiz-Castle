@@ -34,18 +34,20 @@
 		}		
     </script>
 	<!-- Facebook Javascript SDK integration -->
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-	<script>		
-		FB.init({
-			appId  : '<?php echo Kohana::config('app.id_key') ?>',
-			status : false, // check login status
-			cookie : true, // enable cookies to allow the server to access the session
-			xfbml  : false  // parse XFBML
-		});
-		window.fbAsyncInit = function() {
-			FB.Canvas.setSize();
-		}	
-    </script>
-    <!-- End Facebook SDK -->
+	<?php if(Request::current()->controller() != 'website'): ?>
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script>		
+			FB.init({
+				appId  : '<?php echo Kohana::config('app.id_key') ?>',
+				status : false, // check login status
+				cookie : true, // enable cookies to allow the server to access the session
+				xfbml  : false  // parse XFBML
+			});
+			window.fbAsyncInit = function() {
+				FB.Canvas.setSize();
+			}	
+		</script>
+		<!-- End Facebook SDK -->
+	<?php endif; ?>
 	</body>
 </html>

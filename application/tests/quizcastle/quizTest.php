@@ -171,4 +171,62 @@ class QuizCastle_quizTest extends Unittest_TestCase
 		}		
 		$this->assertEquals(true, $is_ok);
 	}
+
+	/**
+	 * Provider resume from incomplete quiz
+	 *
+	 *
+	 * @return array
+	 */
+	public function provider_resume_incomplete_questions()
+	{
+		return array(
+			array("1,9,8,7,2,6,5,3,0,4", serialize(array(1=>0,9=>1,8=>1,6=>0,5=>1,3=>0,0=>1,4=>1))),
+			array("11,19,18,17,12,16,15,13,10,14",serialize(array(11=>0,19=>1,18=>1,6=>0,5=>1,3=>0,0=>1,4=>1))),
+			array("21,29,28,27,22,26,25,23,20,24",serialize(array(21=>0, 29=>1))),
+		);
+	}
+
+	/**
+	 * Test Quiz entry
+	 *
+	 * @test
+	 * @dataProvider resume_incomplete_questions
+	 * @covers Quiz->add_entry
+	 * @param array $question_ids Questions ids
+	 * @param string $session_answers Serialized array of answers so far
+	 */
+	public function test_resume_incomplete_questions($question_ids, $session_answers)
+	{
+
+	}
+
+	/**
+	 * Provider play another game 
+	 *
+	 * @return array Collection of question id's that have been answered already
+	 */	
+	public function provider_play_again()
+	{
+		return array(
+			array("1,9,8,7,2,6,5,3,0,4"),
+			array("11,19,18,17,12,16,15,13,10,14,1,9,8,7,2,6,5,3,0,4"),
+			array("11,19,18,17,12,16,15,13,10,14,1,9,8,7,2,6,5,3,0,4,21,29,28,27,22,26,25,23,20,24"),
+		);
+	}
+
+	/**
+	 * Test Quiz entry
+	 *
+	 * Get another ten questions that exclude those 
+	 * that exist within the provided parameter
+	 * @test
+	 * @dataProvider provider_play_again
+	 * @covers Quiz->add_entry
+	 * @param array $test_data Expected data
+	 */
+	public function test_play_again($questions_to_be_excluded)
+	{
+
+	}
 }
